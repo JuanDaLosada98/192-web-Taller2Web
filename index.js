@@ -1,21 +1,58 @@
 const express = require('express');
+// importar body parser
+var bodyParser = require('body-parser');
+// importar handlebars :)
+var exphbs  = require('express-handlebars');
+ 
+// instanciar app
 const app = express();
-const exphbs  = require('express-handlebars');
-const path = require('path');
-
-const PORT = process.env.PORT || 5000;
-
-// Set handlebars middleware
+//lineas de handlebars
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
+// configuración body parser para poder usar variables post en el body
+app.use(bodyParser.urlencoded({ extended: true }));
 
-// Set handlebars routes
-app.get('/', function (req, response) {
-    response.sendFile(__dirname+'/public/index.html')
+// definir puerto
+const port = 5000;
+
+// importar mongo
+const MongoClient = require('mongodb').MongoClient;
+//si dice requiere no es algo que se daba pasar, dice igual a algo si se debe pasar porque es una instancia
+const assert = require('assert');
+
+//importar createRoutes
+const createRoutes = require('./routes.js');
+
+//Connection URL
+const url = 'mongodb://localhost:27017';
+
+// Database Name
+const dbName = 'store';
+
+// Create a new MongoClient
+const client = new MongoClient(url);
+
+//conectarse al cliente
+client.connect(function(err) {
+    assert.equal(null, err);
+    console.log("Connected successfully to server");
+    
+    //le dice que se conecte a la base de datos que ya creamos
+    const db = client.db(dbName);
+    
+    
+    //products es el nombre de la colección en la base de datos, debe llamarse igual 
+    const tipoDinosaurios = db.collection('products');
+
+    createRoutes(app,db);
+    
 });
 
-// Set static folder
-app.use(express.static(path.join(__dirname, 'public')));
+// definir una carpeta como pública
+app.use(express.static('public'));
 
-app.listen(PORT, () => console.log('El servidor esta escuchando en el puerto: '+PORT));
+
+app.listen(port, () => {
+    console.log(`Servidor iniciado en el puerto ${port}`);
+});

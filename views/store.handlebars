@@ -1,0 +1,14 @@
+<h1>handlebars homepage</h1>
+
+{{#each products}}
+    <div class="generalproduct">
+        <h3 class="tx20">{{name}}</h3>
+        <p class="tx20">{{price}}</p>
+        <p class="tx20">{{popularity}}</p>
+        <p class="tx20">{{danger}}</p>
+        <p class="tx20">{{size}}</p>
+        <p class="tx20">{{rareness}}</p>
+        <p class="tx20">{{description}}</p>
+        <button class="btn">agregar</button>
+    </div>
+    {{/each}}
