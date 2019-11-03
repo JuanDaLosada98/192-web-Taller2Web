@@ -47,6 +47,19 @@ $colorrose: #ff1f50;
       align-content: center;
       align-items: flex-start;
       height: 100%;
+      .listsp{
+          border-radius: 10px;
+          font-family: fr-bold;
+          font-size: 13px;
+      }
+      .filters__enviar{
+          border-radius: 10px;
+          color: $colorwhite;
+          background-color: $colorrose;
+          font-family: fr-bold;
+          outline: none;
+          border: none;
+      }
     }
   }
   .gcontainer__products {

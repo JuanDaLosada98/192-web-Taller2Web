@@ -1836,6 +1836,17 @@ input[type=range]:focus::-ms-fill-upper {
       -ms-flex-align: start;
       align-items: flex-start;
       height: 100%; }
+      .gcontainer .gcontainer__filter .gcontainer__filtercontent .listsp {
+        border-radius: 10px;
+        font-family: fr-bold;
+        font-size: 13px; }
+      .gcontainer .gcontainer__filter .gcontainer__filtercontent .filters__enviar {
+        border-radius: 10px;
+        color: white;
+        background-color: #ff1f50;
+        font-family: fr-bold;
+        outline: none;
+        border: none; }
   .gcontainer .gcontainer__products {
     width: 70%;
     display: -ms-grid;
