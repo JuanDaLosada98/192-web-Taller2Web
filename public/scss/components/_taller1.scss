@@ -814,6 +814,9 @@
     font-size: 30px;
     text-align: center;
     transition: color 0.8s ease;
+    &:hover{
+      text-decoration: none;
+    }
   }
   .newsletterbtn:hover{
     color: rgba(255, 31, 80, 0.5);

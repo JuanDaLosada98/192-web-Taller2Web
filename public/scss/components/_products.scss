@@ -1,5 +1,27 @@
 $colorwhite: white;
 $colorrose: #ff1f50;
+.titleshop {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding: 30px 0 30px 0;
+  .title {
+    margin-left: 100px;  
+    width: 100%;
+    font-family: fr-bold;
+    color: $colorwhite;
+    font-size: 40px;
+    text-align: center;
+  }
+  .subtitle {
+    font-family: fr-bold;
+    color: $colorrose;
+    font-size: 18px;
+    text-align: center;
+  }
+}
 
 .gcontainer {
   display: flex;
@@ -8,7 +30,9 @@ $colorrose: #ff1f50;
   justify-content: space-around;
   align-content: stretch;
   align-items: flex-start;
+
   .gcontainer__filter {
+    margin-top: -150px;  
     width: 242px;
     height: 580px;
     left: 37px;
@@ -60,7 +84,6 @@ $colorrose: #ff1f50;
           font-size: 15px;
           text-align: center;
           opacity: 1;
-
         }
         .descript {
           transition: all 0.5s ease;
@@ -73,7 +96,6 @@ $colorrose: #ff1f50;
           text-align: center;
           margin-bottom: 8px;
           opacity: 1;
-
         }
       }
 
@@ -92,9 +114,9 @@ $colorrose: #ff1f50;
         margin-top: 10px;
         margin-bottom: 10px;
         transition: all 0.5s ease;
-        &:hover{
-            transform: scale(1.15);
-            text-decoration: none;                
+        &:hover {
+          transform: scale(1.15);
+          text-decoration: none;
         }
       }
 
@@ -172,4 +194,22 @@ $colorrose: #ff1f50;
   font-size: 15px;
   margin: 0;
   margin-top: 10px;
+}
+.carshop {
+  position: fixed;
+  bottom: 660px;
+  right: 0;
+  transition: all 0.5s ease;
+  &:hover{
+    transform: scale(0.9);
+    transform: translateX(10px);
+  }
+  .carshop__lenght {
+    position: absolute;
+    margin-left: 10px;
+    margin-top: 6px;
+    font-family: fr-bold;
+    font-size: 13px;
+    color: $colorrose;
+  }
 }

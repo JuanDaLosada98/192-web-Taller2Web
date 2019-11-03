@@ -1110,6 +1110,8 @@ input[type=range]:focus::-ms-fill-upper {
   -webkit-transition: color 0.8s ease;
   -o-transition: color 0.8s ease;
   transition: color 0.8s ease; }
+  .newsletterbtn:hover {
+    text-decoration: none; }
 
 .newsletterbtn:hover {
   color: rgba(255, 31, 80, 0.5); }
@@ -1760,6 +1762,36 @@ input[type=range]:focus::-ms-fill-upper {
   .contendor-menu-responsive {
     top: 84px; } }
 
+.titleshop {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  padding: 30px 0 30px 0; }
+  .titleshop .title {
+    margin-left: 100px;
+    width: 100%;
+    font-family: fr-bold;
+    color: white;
+    font-size: 40px;
+    text-align: center; }
+  .titleshop .subtitle {
+    font-family: fr-bold;
+    color: #ff1f50;
+    font-size: 18px;
+    text-align: center; }
+
 .gcontainer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1778,6 +1810,7 @@ input[type=range]:focus::-ms-fill-upper {
   -ms-flex-align: start;
   align-items: flex-start; }
   .gcontainer .gcontainer__filter {
+    margin-top: -150px;
     width: 242px;
     height: 580px;
     left: 37px;
@@ -1977,3 +2010,25 @@ input[type=range]:focus::-ms-fill-upper {
   font-size: 15px;
   margin: 0;
   margin-top: 10px; }
+
+.carshop {
+  position: fixed;
+  bottom: 660px;
+  right: 0;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease; }
+  .carshop:hover {
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+    -webkit-transform: translateX(10px);
+    -ms-transform: translateX(10px);
+    transform: translateX(10px); }
+  .carshop .carshop__lenght {
+    position: absolute;
+    margin-left: 10px;
+    margin-top: 6px;
+    font-family: fr-bold;
+    font-size: 13px;
+    color: #ff1f50; }

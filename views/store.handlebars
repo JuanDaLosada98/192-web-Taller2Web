@@ -1,10 +1,11 @@
+<div class="titleshop">
+    <p class="title">THIS IS THE BEST SPACE WEAPON SHOP</p>
+    <p class="subtitle">YOU CAN FIND A LOT OF SPECIAL WEAPONS RIGHT HERE</p>
+
+</div>
+<div></div>
 <div class="gcontainer">
     <div class="gcontainer__filter">
-        <div class="gcontainer__title">
-            <p class="title">THIS IS THE BEST SPACE WEAPON SHOP</p>
-            <p class="subtitle">YOU CAN FIND A LOT OF SPACE WEAPONS RIGHT HERE</p>
-
-        </div>
         <div class="gcontainer__filtercontent">
             <a class="viewall" href="">VIEW ALL</a>
             <p class="titles">FILTER</p>
@@ -21,7 +22,7 @@
                 <button class="filters__enviar" type="submit">Filter</button>
             </form>
             <p class="list-titles">SIZE</p>
-             <form action="/store" method="GET">
+            <form action="/store" method="GET">
                 <select name="filter">
                     <option value="big">Big</option>
                     <option value="medium">Medium</option>
@@ -47,7 +48,7 @@
                 </select>
                 <button class="filters__send" type="submit">Order</button>
             </form>
-            <p class="list-titles">ORDER BY PRICE</p>            
+            <p class="list-titles">ORDER BY PRICE</p>
             <form action="/store" method="GET">
                 <select name="filter">
                     <option value="low to high">Low to high</option>
@@ -69,12 +70,20 @@
         {{#each products}}
         <div class="generalproduct">
             <img class="imgProduct" src="{{image}}" alt="">
-                    
+
             <p class="descript">{{description}}</p>
             <p class="price">${{price}}</p>
-            <div class="btnadd"><a class="btnaddg" href=""><img class="imgbtnadd" src="/images/add.png" alt=""></a></div>
-            <a class="name" href="">{{name}}</a>   
+            <div class="btnadd"><a class="btnaddg" href=""><img class="imgbtnadd" src="/images/add.png" alt=""></a>
+            </div>
+            <a class="name" href="">{{name}}</a>
         </div>
         {{/each}}
     </div>
+
+</div>
+<div class="carshop">
+    <p class="carshop__lenght">2</p>
+    <a href="" class="carshop__btn">
+        <img src="/images/carrito.png" alt="" class="carshop__img">
+    </a>
 </div>
