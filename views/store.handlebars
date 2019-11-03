@@ -1,15 +1,75 @@
-<h1>handlebars homepage</h1>
-
-{{#each products}}
-    <div class="generalproduct">
-        <img class="imgProduct" src="{{image}}" alt="">
-        <h3 class="tx20">{{name}}</h3>
-        <p class="tx20">{{price}}</p>
-        <p class="tx20">{{popularity}}</p>
-        <p class="tx20">{{danger}}</p>
-        <p class="tx20">{{size}}</p>
-        <p class="tx20">{{rareness}}</p>
-        <p class="tx20">{{description}}</p>
-        <button class="btn">agregar</button>
+<div class="gcontainer">
+    <div class="gcontainer__filter">
+        <div class="gcontainer__filtercontent">
+            <a class="viewall" href="">VIEW ALL</a>
+            <p class="titles">FILTER</p>
+            <p class="list-titles">RANGE PRICE</p>
+            <form action="/store" method="GET">
+                <select name="filter">
+                    <option value="0-$10.000">0-$10.000</option>
+                    <option value="$10.000-$20.000">$10.000-$20.000</option>
+                    <option value="$20.000-$30.000">$20.000-$30.000</option>
+                    <option value="$30.000-$40.000">$30.000-$40.000</option>
+                    <option value="$40.000-$50.000">$40.000-$50.000</option>
+                    <option value="$60.000-$100.000">$50.000-$100.000</option>
+                </select>
+                <button class="filters__enviar" type="submit">Filter</button>
+            </form>
+            <p class="list-titles">POPULARITY</p>
+            <form action="/store" method="GET">
+                <select name="filter">
+                    <option value="from more to less">from more to less</option>
+                    <option value="from less to more">from less to more</option>
+                </select>
+                <button class="filters__send" type="submit">Filter</button>
+            </form>
+            <p class="list-titles">DANGER</p>
+            <form action="/store" method="GET">
+                <select name="filter">
+                    <option value="plasma">Plasma</option>
+                    <option value="electric">Electric</option>
+                    <option value="x-rays">X-rays</option>
+                </select>
+                <button class="filters__send" type="submit">Filter</button>
+            </form>
+            <p class="titles">ORDER</p>
+            <p class="list-titles">SIZE</p>
+            <form action="/store" method="GET">
+                <select name="filter">
+                    <option value="big">Big</option>
+                    <option value="medium">Medium</option>
+                    <option value="small">Small</option>
+                </select>
+                <button class="filters__send" type="submit">Order</button>
+            </form>
+            <p class="list-titles">ORDER BY PRICE</p>            
+            <form action="/store" method="GET">
+                <select name="filter">
+                    <option value="low to high">Low to high</option>
+                    <option value="high to low">High to low</option>
+                </select>
+                <button class="filters__send" type="submit">Order</button>
+            </form>
+            <p class="list-titles">RARENESS</p>
+            <form action="/store" method="GET">
+                <select name="filter">
+                    <option value="from more to less">from more to less</option>
+                    <option value="from less to more">from less to more</option>
+                </select>
+                <button class="filters__send" type="submit">Order</button>
+            </form>
+        </div>
     </div>
-    {{/each}}
+    <div class="gcontainer__products">
+        {{#each products}}
+        <div class="generalproduct">
+            <img class="imgProduct" src="{{image}}" alt="">
+            <div class="name">{{name}}</div>
+            <div class="opacityframe"><div class="opacity"></div></div>
+            <p class="descript">{{description}}</p>
+            <p class="price">$ {{price}}</p>
+            <div class="btnadd"><a class="btnaddg" href=""><img class="imgbtnadd" src="/images/add.png" alt=""></a></div>
+        </div>
+        {{/each}}
+    </div>
+</div>
