@@ -1,5 +1,10 @@
 <div class="gcontainer">
     <div class="gcontainer__filter">
+        <div class="gcontainer__title">
+            <p class="title">THIS IS THE BEST SPACE WEAPON SHOP</p>
+            <p class="subtitle">YOU CAN FIND A LOT OF SPACE WEAPONS RIGHT HERE</p>
+
+        </div>
         <div class="gcontainer__filtercontent">
             <a class="viewall" href="">VIEW ALL</a>
             <p class="titles">FILTER</p>
@@ -15,13 +20,14 @@
                 </select>
                 <button class="filters__enviar" type="submit">Filter</button>
             </form>
-            <p class="list-titles">POPULARITY</p>
-            <form action="/store" method="GET">
+            <p class="list-titles">SIZE</p>
+             <form action="/store" method="GET">
                 <select name="filter">
-                    <option value="from more to less">from more to less</option>
-                    <option value="from less to more">from less to more</option>
+                    <option value="big">Big</option>
+                    <option value="medium">Medium</option>
+                    <option value="small">Small</option>
                 </select>
-                <button class="filters__send" type="submit">Filter</button>
+                <button class="filters__send" type="submit">filter</button>
             </form>
             <p class="list-titles">DANGER</p>
             <form action="/store" method="GET">
@@ -33,12 +39,11 @@
                 <button class="filters__send" type="submit">Filter</button>
             </form>
             <p class="titles">ORDER</p>
-            <p class="list-titles">SIZE</p>
+            <p class="list-titles">POPULARITY</p>
             <form action="/store" method="GET">
                 <select name="filter">
-                    <option value="big">Big</option>
-                    <option value="medium">Medium</option>
-                    <option value="small">Small</option>
+                    <option value="from more to less">from more to less</option>
+                    <option value="from less to more">from less to more</option>
                 </select>
                 <button class="filters__send" type="submit">Order</button>
             </form>
@@ -64,11 +69,11 @@
         {{#each products}}
         <div class="generalproduct">
             <img class="imgProduct" src="{{image}}" alt="">
-            <div class="name">{{name}}</div>
-            <div class="opacityframe"><div class="opacity"></div></div>
+                    
             <p class="descript">{{description}}</p>
-            <p class="price">$ {{price}}</p>
+            <p class="price">${{price}}</p>
             <div class="btnadd"><a class="btnaddg" href=""><img class="imgbtnadd" src="/images/add.png" alt=""></a></div>
+            <a class="name" href="">{{name}}</a>   
         </div>
         {{/each}}
     </div>

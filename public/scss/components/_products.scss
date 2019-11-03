@@ -40,6 +40,42 @@ $colorrose: #ff1f50;
       margin-left: 30px;
       margin-bottom: 20px;
       margin-top: 20px;
+      width: 210px;
+      height: 260px;
+      transition: all 0.5s ease;
+      &:hover {
+        height: 340px;
+        transition: all 0.5s ease;
+        .imgProduct {
+          margin-top: 20px;
+        }
+        .btnadd {
+          padding-bottom: 80px;
+        }
+        .price {
+          transition: all 0.5s ease;
+          display: flex;
+          font-family: fr-bold;
+          color: $colorrose;
+          font-size: 15px;
+          text-align: center;
+          opacity: 1;
+
+        }
+        .descript {
+          transition: all 0.5s ease;
+          display: flex;
+          transition: all 0.5s ease;
+          display: flex;
+          font-family: fr-bold;
+          color: grey;
+          font-size: 13px;
+          text-align: center;
+          margin-bottom: 8px;
+          opacity: 1;
+
+        }
+      }
 
       .imgProduct {
         margin: 5px 5px 5px 5px;
@@ -47,6 +83,7 @@ $colorrose: #ff1f50;
         height: 190.38px;
         border-radius: 15px;
         margin-top: 10px;
+        transition: all 0.5s ease;
       }
       .name {
         font-family: fr-bold;
@@ -54,34 +91,22 @@ $colorrose: #ff1f50;
         font-size: 15px;
         margin-top: 10px;
         margin-bottom: 10px;
-      }
-      .opacity {
-        position: absolute;
-        background: rgba(0, 0, 0, 0.5);
-        width: 190px;
-        height: 190px;
-        border-radius: 15px;
-        margin-top: 9.5px;
-        margin-left: 9.5px;
-        
-        
-      }
-      .opacityframe {
-        width: 210px;
-        height: 247px;
-        position: absolute;
-        display: flex;
-        flex-direction: column;
-        opacity: 0;
+        transition: all 0.5s ease;
         &:hover{
-            opacity: 1;
+            transform: scale(1.15);
+            text-decoration: none;                
         }
       }
+
       .price {
         display: none;
+        opacity: 0;
         transition: all 0.5s ease;
+        margin: 0;
       }
       .descript {
+        opacity: 0;
+
         display: none;
         transition: all 0.5s ease;
       }
@@ -95,6 +120,7 @@ $colorrose: #ff1f50;
         height: 247px;
         padding-bottom: 45px;
         padding-right: 8px;
+        transition: all 0.5s ease;
       }
       .imgbtnadd {
         width: 45px;
