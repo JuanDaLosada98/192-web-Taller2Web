@@ -9,7 +9,7 @@ window.addEventListener('load', function(){
         btn.addEventListener('click', function(event){
             event.preventDefault();
             var id = btn.getAttribute('data-name');
-            console.log("ajaja");
+          
             var promise = fetch('/api/cart/' + id, { method: 'POST' });
             promise
                 .then(function (response) {
