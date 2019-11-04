@@ -58,6 +58,29 @@ function createRoutes (app, db) {
 
 
     });
+    app.get('/product/:id', function (req, res) {
+        const products = db.collection('products');
+        var query= {};        
+        products.find({})
+        // transformamos el cursor a un arreglo
+        .toArray((err, result) => {
+            // asegurarnos de que noh ay error
+            
+            //
+            var c=0;
+            for(c;c<result.length;c++){
+                if(req.params.id.toString()===result[c]._id.toString()){
+                    result[c].cartLength= cartList.length,
+                    res.render('product', result[c]);
+                }
+                
+            }
+            
+            
+        });
+        
+    });
+    
     app.get('/store', (request, response) => {
         const products = db.collection('products');
         console.log('Alguien entró a la tienda');

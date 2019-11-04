@@ -69,14 +69,15 @@
     <div class="gcontainer__products">
         {{#each products}}
         <div class="generalproduct">
-            <img class="imgProduct" src="{{image}}" alt="">
+           
             <div class="btnadd"><a class="btnaddg"  data-name="{{this._id}}"><img class="imgbtnadd" src="/images/add.png"
                         alt=""></a>
             </div>
+            <a href="/product/{{this._id}}"> <img class="imgProduct" src="{{image}}" alt=""></a>
             <p class="descript">{{description}}</p>
             <p class="price">${{price}}</p>
 
-            <a class="name"  href="/product/{{this._id}}>{{name}}</a>
+            <a class="name"  href="/product/{{this._id}}">{{name}}</a>
         </div>
         {{/each}}
     </div>

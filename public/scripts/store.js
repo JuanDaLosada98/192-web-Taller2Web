@@ -3,7 +3,7 @@ window.addEventListener('load', function(){
 
     var addBtn = document.querySelectorAll('.btnaddg');
     var countCart = document.querySelector('.carshop__lenght');
-
+    var productBtn = document.querySelectorAll('.generalproduct');
     addBtn.forEach(function (btn) {
         
         btn.addEventListener('click', function(event){
@@ -24,5 +24,7 @@ window.addEventListener('load', function(){
         });
 
     });
+
+   
 
 });

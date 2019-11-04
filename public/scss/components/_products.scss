@@ -79,10 +79,13 @@ $colorrose: #ff1f50;
       width: 210px;
       height: 260px;
       transition: all 0.5s ease;
+     
       &:hover {
         height: 340px;
         transition: all 0.5s ease;
-      
+        .btnaddg {
+          transform: translateY(-20px);
+        }
         .btnadd {
           padding-bottom: 60px;
         }
@@ -110,12 +113,14 @@ $colorrose: #ff1f50;
       }
 
       .imgProduct {
+        position: relative;
         margin: 5px 5px 5px 5px;
         width: 190.38px;
         height: 190.38px;
         border-radius: 15px;
         margin-top: 10px;
         transition: all 0.5s ease;
+        z-index: 1;
       }
       .name {
         font-family: fr-bold;
@@ -145,29 +150,31 @@ $colorrose: #ff1f50;
       .btnadd {
         position: absolute;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         justify-content: flex-end;
         align-items: flex-end;
-        width: 210px;
-        height: 247px;
-        padding-bottom: 45px;
-        padding-right: 8px;
         transition: all 0.5s ease;
+        
       }
       .imgbtnadd {
         width: 45px;
         height: 44px;
         transition: all 0.5s ease;
+        z-index: 1;
         &:hover {
           transform: scale(1.18);
         }
       }
 
       .btnaddg {
-        position: absolute;
+        position: relative;
         width: 45px;
         height: 44px;
+        z-index: 2;
         cursor: pointer;
+        left: 77px;
+        top: 156.5px;
+        transition: all 0.5s ease;
         
       }
     }
