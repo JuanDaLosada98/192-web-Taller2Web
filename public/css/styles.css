@@ -1861,9 +1861,6 @@ input[type=range]:focus::-ms-fill-upper {
       -webkit-box-direction: normal;
       -ms-flex-direction: column;
       flex-direction: column;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
-      justify-content: center;
       -ms-flex-line-pack: center;
       align-content: center;
       -webkit-box-align: center;
@@ -1884,10 +1881,8 @@ input[type=range]:focus::-ms-fill-upper {
         -webkit-transition: all 0.5s ease;
         -o-transition: all 0.5s ease;
         transition: all 0.5s ease; }
-        .gcontainer .gcontainer__products .generalproduct:hover .imgProduct {
-          margin-top: 20px; }
         .gcontainer .gcontainer__products .generalproduct:hover .btnadd {
-          padding-bottom: 80px; }
+          padding-bottom: 60px; }
         .gcontainer .gcontainer__products .generalproduct:hover .price {
           -webkit-transition: all 0.5s ease;
           -o-transition: all 0.5s ease;
@@ -1986,7 +1981,8 @@ input[type=range]:focus::-ms-fill-upper {
       .gcontainer .gcontainer__products .generalproduct .btnaddg {
         position: absolute;
         width: 45px;
-        height: 44px; }
+        height: 44px;
+        cursor: pointer; }
 
 .viewall {
   text-decoration: none;
@@ -2036,10 +2032,29 @@ input[type=range]:focus::-ms-fill-upper {
     -webkit-transform: translateX(10px);
     -ms-transform: translateX(10px);
     transform: translateX(10px); }
-  .carshop .carshop__lenght {
+
+.lenghtCont {
+  position: absolute;
+  width: 21px;
+  height: 21px;
+  margin-left: 4px;
+  margin-right: 5px;
+  margin-top: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-line-pack: center;
+  align-content: center; }
+  .lenghtCont .carshop__lenght {
     position: absolute;
-    margin-left: 10px;
-    margin-top: 6px;
     font-family: fr-bold;
     font-size: 13px;
-    color: #ff1f50; }
+    color: #ff1f50;
+    text-align: center;
+    margin: 0; }

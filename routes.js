@@ -1,6 +1,8 @@
 const assert = require('assert');
 const ObjectID = require ('mongodb').ObjectID;
 
+var cartList = [];
+
 function createRoutes (app, db) {
 
     app.get('/', (request, response) => {
@@ -12,7 +14,50 @@ function createRoutes (app, db) {
     //     console.log('Alguien entró a la tienda');
     //     response.render('store');
     // });
+    app.post('/api/cart/:id', (request, response) => {
+        var id = request.params.id;
+        const products = db.collection('products');
+        var query = {};
 
+        var esId = false;
+        products.find({})
+            // transformamos el cursor a un arreglo
+            .toArray((err, result) => {
+                // asegurarnos de que no hay error
+
+                //
+
+                var c = 0;
+                var cont = 0;
+                
+                for (c; c < result.length; c++) {
+                    if (request.params.id.toString() === result[c]._id.toString()) {
+                        esId = true;
+                        cartList.push(result[c]);
+
+                        cont += 1;
+                    }
+                }
+
+                if (!esId) {
+                    response.send({
+                        message: 'error',
+                        cartLength: cartList.length
+                    });
+                    return;
+                }
+
+
+                console.log("cartList[0]");
+                response.send({
+                    cartLength: cartList.length
+                });
+
+            });
+
+
+
+    });
     app.get('/store', (request, response) => {
         const products = db.collection('products');
         console.log('Alguien entró a la tienda');

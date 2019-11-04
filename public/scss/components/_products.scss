@@ -69,7 +69,6 @@ $colorrose: #ff1f50;
     .generalproduct {
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-content: center;
       align-items: center;
       background: $colorwhite;
@@ -83,11 +82,9 @@ $colorrose: #ff1f50;
       &:hover {
         height: 340px;
         transition: all 0.5s ease;
-        .imgProduct {
-          margin-top: 20px;
-        }
+      
         .btnadd {
-          padding-bottom: 80px;
+          padding-bottom: 60px;
         }
         .price {
           transition: all 0.5s ease;
@@ -170,6 +167,8 @@ $colorrose: #ff1f50;
         position: absolute;
         width: 45px;
         height: 44px;
+        cursor: pointer;
+        
       }
     }
   }
@@ -217,12 +216,25 @@ $colorrose: #ff1f50;
     transform: scale(0.9);
     transform: translateX(10px);
   }
+  
+}
+.lenghtCont{
+  position: absolute;
+  width: 21px;
+  height: 21px;
+  margin-left: 4px;
+  margin-right: 5px;
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
   .carshop__lenght {
     position: absolute;
-    margin-left: 10px;
-    margin-top: 6px;
     font-family: fr-bold;
     font-size: 13px;
     color: $colorrose;
+    text-align: center;
+    margin: 0;
   }
 }
