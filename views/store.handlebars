@@ -7,7 +7,7 @@
 <div class="gcontainer">
     <div class="gcontainer__filter">
         <div class="gcontainer__filtercontent">
-            <a class="viewall" href="">VIEW ALL</a>
+            <a class="viewall" href="/store">VIEW ALL</a>
             <p class="titles">FILTER</p>
             <p class="list-titles">RANGE PRICE</p>
             <form action="/store" method="GET">
@@ -74,10 +74,11 @@
                         alt=""></a>
             </div>
             <a href="/product/{{this._id}}"> <img class="imgProduct" src="{{image}}" alt=""></a>
+            <a class="name"  href="/product/{{this._id}}">{{name}}</a>
             <p class="descript">{{description}}</p>
             <p class="price">${{price}}</p>
 
-            <a class="name"  href="/product/{{this._id}}">{{name}}</a>
+            
         </div>
         {{/each}}
     </div>

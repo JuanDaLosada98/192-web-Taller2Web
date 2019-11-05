@@ -51,28 +51,42 @@ $colorrose: #ff1f50;
         color: $colorwhite;
         font-size: 22px;
       }
+      .frameL__title2{
+        font-family: fr-bold;
+        color: $colorrose;
+        font-size: 15px;
+      }
     }
     .frameL__bottom {
       width: 100%;
       display: flex;
       flex-direction: column;
       align-items: flex-end;
-      justify-content: center;
-      align-content: center;
-      margin-top: 50px;
-      padding: 30px;  
-      .bottom__overt {
-        font-family: fr-bold;
-        color: $colorwhite;
-        font-size: 15px;
-      }
+      justify-content: space-around;
+      align-content: space-around;
+      padding: 0 30px 0 30px;
+      margin-top: 10px; 
+      .bottom__contain{
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 0 10px 0;
+        .bottom__overt {
+          font-family: fr-bold;
+          color: $colorwhite;
+          font-size: 15px;
+        }
+      } 
+      
       .bottom__input {
         border-radius: 15px;
         width: 60%;
         font-family: fr-bold;
         color: $colorrose;
-        font-size: 12px;
+        font-size: 13px;
         border: none;
+        padding: 15px;
       }
       .contain_confirmBtn{
           width: 60%;
@@ -98,11 +112,14 @@ $colorrose: #ff1f50;
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
+        padding: 10px;
         label {
           font-family: fr-bold;
           color: $colorwhite;
           font-size: 15px;
+          padding-right: 15px;
           .check {
+            margin-left: 15px;
           }
         }
       }
@@ -112,31 +129,22 @@ $colorrose: #ff1f50;
     width: 30%;
     display: flex;
     flex-direction: column;
-
-    .generalproduct {
+    justify-content: center;
+    align-items: center;
+    .productbuy{
+      width: 90%;
+      height: 70%;
       display: flex;
       flex-direction: column;
       align-content: center;
       align-items: center;
       background: $colorwhite;
       border-radius: 15px;
-      margin-left: 30px;
-      margin-bottom: 20px;
-      margin-top: 20px;
-      width: 210px;
-      height: 260px;
+      padding: 20px;
       transition: all 0.5s ease;
-
-      &:hover {
-        height: 340px;
-        transition: all 0.5s ease;
-        .btnaddg {
-          transform: translateY(-20px);
-        }
-        .btnadd {
-          padding-bottom: 60px;
-        }
-        .price {
+      &:hover{
+        height: 80%;
+        .price {  
           transition: all 0.5s ease;
           display: flex;
           font-family: fr-bold;
@@ -144,6 +152,7 @@ $colorrose: #ff1f50;
           font-size: 15px;
           text-align: center;
           opacity: 1;
+          margin: 0;
         }
         .descript {
           transition: all 0.5s ease;
@@ -158,16 +167,19 @@ $colorrose: #ff1f50;
           opacity: 1;
         }
       }
-
-      .imgProduct {
-        position: relative;
-        margin: 5px 5px 5px 5px;
-        width: 190.38px;
-        height: 190.38px;
+      .imgPB{
+        width: 100%;
         border-radius: 15px;
-        margin-top: 10px;
+      }
+      .price {
         transition: all 0.5s ease;
-        z-index: 1;
+        display: none;
+        opacity: 0;
+      }
+      .descript {
+        transition: all 0.5s ease;
+        display: none;
+        opacity: 0;
       }
       .name {
         font-family: fr-bold;
@@ -180,47 +192,6 @@ $colorrose: #ff1f50;
           transform: scale(1.15);
           text-decoration: none;
         }
-      }
-
-      .price {
-        display: none;
-        opacity: 0;
-        transition: all 0.5s ease;
-        margin: 0;
-      }
-      .descript {
-        opacity: 0;
-
-        display: none;
-        transition: all 0.5s ease;
-      }
-      .btnadd {
-        position: absolute;
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        align-items: flex-end;
-        transition: all 0.5s ease;
-      }
-      .imgbtnadd {
-        width: 45px;
-        height: 44px;
-        transition: all 0.5s ease;
-        z-index: 1;
-        &:hover {
-          transform: scale(1.18);
-        }
-      }
-
-      .btnaddg {
-        position: relative;
-        width: 45px;
-        height: 44px;
-        z-index: 2;
-        cursor: pointer;
-        left: 77px;
-        top: 156.5px;
-        transition: all 0.5s ease;
       }
     }
     

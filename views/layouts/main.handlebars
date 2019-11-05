@@ -17,6 +17,37 @@
 
     <div class="wrapperP">
 
+        <div class="wrapperLCR">
+            <div class="listCartR">
+
+                <div class="productsAddedC">
+
+
+
+
+
+                    
+                </div>
+
+
+
+
+
+                <div class="carshop">
+                    <div class="lenghtCont">
+                        <p class="carshop__lenght">{{cartLength}}</p>
+                    </div>
+
+                    <div class="carshop__btn">
+                        <img src="/images/carrito.png" alt="" class="carshop__img">
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+
         <header class="header">
             <div class="header__top centrar">
                 <div class="header__toplogo">
@@ -70,16 +101,11 @@
                     <a href="#magic" class="navlink">Magic</a>
                 </span>
             </div>
-            <div class="carshop">
-                <div class="lenghtCont">
-                    <p class="carshop__lenght">{{cartLength}}</p>
-                </div>
 
-                <a href="" class="carshop__btn">
-                    <img src="/images/carrito.png" alt="" class="carshop__img">
-                </a>
-            </div>
         </header>
+
+
+
 
 
         {{{body}}}
@@ -126,39 +152,53 @@
                     <h1 class="frameL__title1">
                         IF YOU WANT TO BUY THIS PRODUCT YOU HAVE TO REVEAL US SOME INFORMATION
                     </h1>
+                    <h2 class="frameL__title2">
+                        *IF YOU WANT TO CANCEL THIS PROCESS CLICK ANYWHERE OUT THE BOX
+                    </h2>
                 </div>
                 <div class="frameL__bottom">
-                    <div class="bottom__overt">FULL NAME</div>
+                    <div class="bottom__contain">
+                        <div class="bottom__overt">FULL NAME</div>
+                    </div>
+
                     <input type="text" placeholder="Example: Carl Hegel" class="bottom__input" name="namedata" id="">
-                    <div class="bottom__overt">ID NUMBER</div>
+
+                    <div class="bottom__contain">
+                        <div class="bottom__overt">ID NUMBER</div>
+                    </div>
+
                     <input type="text" placeholder="Example: 23819209" class="bottom__input" name="iddata" id="">
+
                     <div class="frameL__bottomCheck">
                         <label>Cash<input type="checkbox" class="check" value="cashCheck"></label>
                         <label>Card<input type="checkbox" class="check" value="cardCheck"></label>
                     </div>
-                    <div class="bottom__overt">DIRECTION</div>
-                    <input type="text" placeholder="Example: Andromeda Galaxy" class="bottom__input" name="dirdata" id="">
-                    <div class="contain_confirmBtn">
-                        <button class="confirmBtn">OK</button>
+
+                    <div class="bottom__contain">
+                        <div class="bottom__overt">DIRECTION</div>
                     </div>
-                     
+
+                    <input type="text" placeholder="Example: Andromeda Galaxy" class="bottom__input" name="dirdata"
+                        id="">
+                    <div class="contain_confirmBtn">
+                        <button class="btnAddBuy__buyFrame">OK</button>
+                    </div>
+
                 </div>
             </div>
 
             <div class="modal__frameR">
 
-                <div class="generalproduct">
+                <div class="productbuy">
 
-                    <div class="btnadd"><a class="btnaddg" data-name="{{this._id}}"><img class="imgbtnadd"
-                                src="/images/add.png" alt=""></a>
-                    </div>
-                    <a href="/product/{{this._id}}"> <img class="imgProduct" src="{{image}}" alt=""></a>
+                    <img class="imgPB" src="{{image}}" alt="">
+                    <a class="name" href="/product/{{this._id}}">{{name}}</a>
                     <p class="descript">{{description}}</p>
                     <p class="price">${{price}}</p>
 
-                    <a class="name" href="/product/{{this._id}}">{{name}}</a>
+
                 </div>
-               
+
             </div>
 
         </div>
@@ -169,6 +209,7 @@
 
 
     <script src="/scripts/checkout.js"></script>
+    <script src="/scripts/cart.js"></script>
 </body>
 
 </html>
