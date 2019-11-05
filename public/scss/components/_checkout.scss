@@ -1,0 +1,51 @@
+$colorwhite: white;
+$colorrose: #ff1f50;
+.modal {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  opacity: 0;
+  transition: opacity 0.7s ease;
+}
+.modal--active {
+  display: flex;
+}
+
+.modal--show {
+  opacity: 1;
+}
+
+.modal__frame {
+  position: fixed;
+  width: 70%;
+  height: 60%;
+  background-color: $colorrose;
+  border-radius: 20px;
+}
+
+.wrapperP {
+  transition: filter 0.7s ease;
+}
+
+.wrapperP--active {
+  filter: blur(2px);
+  pointer-events: none;
+}
+
+.noscroll {
+  overflow: hidden;
+}
+
+.contentImg__scruffy {
+  width: 30%;
+  position: absolute;
+  top: 260px;
+  left: 100px;
+}

@@ -140,17 +140,20 @@ $colorrose: #ff1f50;
     
   }
 }
-.btnAddBuy__AddText{
+.btnAddBuy__Add{
+  cursor: pointer;
   font-family: fr-bold;
   text-decoration: none;
   color: $colorwhite;
+  
   transition: all 0.5s ease;
   &:hover{
-    transform: scale(1.5);
+    transform: scale(1.1);
     text-decoration: none;
     color: $colorrose;
   }
 }
+
 .separatorP{
   width: 100%;
   margin-top: 70px;

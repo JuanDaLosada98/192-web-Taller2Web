@@ -1,86 +1,93 @@
-<div class="generalProductpage">
-    <div class="gProductContainer">
-        <div class="gProductContainer__titles">
-            <div class="producTitle">
-                <p class="producTitle__1">{{name}}</p>
+
+
+    <div class="generalProductpage">
+        <div class="gProductContainer">
+            <div class="gProductContainer__titles">
+                <div class="producTitle">
+                    <p class="producTitle__1">{{name}}</p>
+                </div>
+                <div class="productSubTitle">
+                    <p class="producTitle__2">{{description}}</p>
+                </div>
             </div>
-            <div class="productSubTitle">
-                <p class="producTitle__2">{{description}}</p>
+            <div class="gProductContainer__contents">
+
+                <div class="oneproduct">
+
+                    <img class="oneImgProduct" src="{{image}}" alt="">
+
+                </div>
+
+                <div class="contentsDQ">
+                    <div class="pricelabel">${{price}}
+                    </div>
+                    <div class="frameD">
+                        <div class="contentsDQ__description">
+                            <p class="caracteristicsP">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                                eiusmod
+                                tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure
+                                reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+                                sint
+                                obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                                laborum.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="inputQ">
+                        <div class="inputQ__quantity">
+                            QUANTITY
+                        </div>
+                        <input class="quantityslice" type="number" name="quantity" min="1" max="5" step="1" value="1">
+                    </div>
+                    <div class="btnAddBuy">
+                        <div class="btnAddBuy__Buy">
+                            <button class="btnAddBuy__buyFrame">
+                                BUY NOW
+                            </button>
+                        </div>
+                        <div class="btnAddBuy__Add">
+                            <a class="btnAddBuy__AddText" data-name="{{this._id}}">ADD TO CART</a>
+                        </div>
+                    </div>
+
+
+                </div>
             </div>
         </div>
-        <div class="gProductContainer__contents">
 
-            <div class="oneproduct">
+        <div class="separatorP">
 
-                <img class="oneImgProduct" src="{{image}}" alt="">
-
+            <div class="separatorP__form">
+                <img class="separatorP__formImg" src="/images/separator.png" alt="">
             </div>
 
-            <div class="contentsDQ">
-                <div class="pricelabel" >${{price}}
-                </div>
-                <div class="frameD">
-                    <div class="contentsDQ__description">
-                        <p class="caracteristicsP">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod
-                            tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                            exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure
-                            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                            obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                            laborum.
-                        </p>
-                    </div>
-                </div>
-                <div class="inputQ">
-                    <div class="inputQ__quantity">
-                        QUANTITY
-                    </div>
-                    <input class= "quantityslice" type="number" name="quantity" min="1" max="5" step="1" value="1">
-                </div>
-                <div class="btnAddBuy">
-                    <div class="btnAddBuy__Buy">
-                        <button class="btnAddBuy__buyFrame">
-                            BUY NOW
-                        </button>
-                    </div>
-                    <div class="btnAddBuy__Add">
-                        <a class="btnAddBuy__AddText" href="">ADD TO CART</a>
-                    </div>
-                </div>
-
-
+            <div class="separatorP__title">
+                <p class="separatorP__titleType">IF YOU LIKE THAT, YOU SHOULD SEE THIS</p>
             </div>
+
+            <div class="separatorP__form">
+                <img class="separatorP__formImg" src="/images/separator.png" alt="">
+            </div>
+
+        </div>
+
+        <div class="recommendedP">
+
+            <div class="generalproduct">
+
+                <div class="btnadd"><a class="btnaddg" data-name="{{this._id}}"><img class="imgbtnadd"
+                            src="/images/add.png" alt=""></a>
+                </div>
+                <a href="/product/{{this._id}}"> <img class="imgProduct" src="{{image}}" alt=""></a>
+                <p class="descript">{{description}}</p>
+                <p class="price">${{price}}</p>
+
+                <a class="name" href="/product/{{this._id}}">{{name}}</a>
+            </div>
+
         </div>
     </div>
 
-    <div class="separatorP">
 
-        <div class="separatorP__form">
-            <img class="separatorP__formImg" src="/images/separator.png" alt="">
-        </div>
-
-        <div class="separatorP__title">
-            <p class="separatorP__titleType">IF YOU LIKE THAT, YOU SHOULD SEE THIS</p>
-        </div>
-
-        <div class="separatorP__form">
-            <img class="separatorP__formImg" src="/images/separator.png" alt="">
-        </div>
-
-    </div>
-
-    <div class="recommendedP">
-
-        <div class="generalproduct">
-
-            <div class="btnadd"><a class="btnaddg" data-name="{{this._id}}"><img class="imgbtnadd" src="/images/add.png"
-                        alt=""></a>
-            </div>
-            <a href="/product/{{this._id}}"> <img class="imgProduct" src="{{image}}" alt=""></a>
-            <p class="descript">{{description}}</p>
-            <p class="price">${{price}}</p>
-
-            <a class="name" href="/product/{{this._id}}">{{name}}</a>
-        </div>
-
-    </div>
-</div>
+<script src="/scripts/product.js"></script>
