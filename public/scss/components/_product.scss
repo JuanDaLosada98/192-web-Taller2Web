@@ -95,12 +95,105 @@ $colorrose: #ff1f50;
     border-radius: 23px;
   }
 }
+.pricelabel{
+  background: $colorrose;
+  border-radius: 15px;
+  color: $colorwhite;
+  font-family: fr-bold;
+  font-size: 25px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
 .contentsDQ__description {
   width: 80%;
 }
 .btnAddBuy{
   margin-top: 30px;
   text-align: center;
+}
+.inputQ{
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+ 
+}
+.inputQ__quantity{
+  font-family: fr-bold;
+  color: $colorrose;
+  font-size: 22px;
+  margin-right: 20px;
+  padding: 5px 5px 5px 5px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+}
+.btnAddBuy__buyFrame{
+  color: $colorwhite;
+  background: $colorrose;
+  border: none;
+  font-family: fr-bold;
+  border-radius: 15px;
+  font-size: 30px;
+  transition: all 0.5s ease;
+  &:hover{
+    transform: scale(0.9);
+    
+  }
+}
+.btnAddBuy__AddText{
+  font-family: fr-bold;
+  text-decoration: none;
+  color: $colorwhite;
+  transition: all 0.5s ease;
+  &:hover{
+    transform: scale(1.5);
+    text-decoration: none;
+    color: $colorrose;
+  }
+}
+.separatorP{
+  width: 100%;
+  margin-top: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  .separatorP__form{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    .separatorP__formImg{
+      width: 70%;
+      height: 20px;
+    }
+
+  }
+
+ 
+  
+  .separatorP__title{
+    width: 20%;
+    font-family: fr-bold;
+    color: $colorwhite;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    .separatorP__titleType{
+      margin: 0;
+      text-align: center;
+    }
+  }
+}
+.quantityslice{
+  
+  border-radius: 15px;
+  font-family: fr-bold;
+  border: none;
+  text-align: center;
+  width: 70px;
+}
+.recommendedP{
+  margin-top: 60px;
 }
 .generalproduct {
   display: flex;
@@ -109,9 +202,6 @@ $colorrose: #ff1f50;
   align-items: center;
   background: $colorwhite;
   border-radius: 15px;
-  margin-left: 30px;
-  margin-bottom: 20px;
-  margin-top: 20px;
   width: 210px;
   height: 260px;
   transition: all 0.5s ease;
@@ -123,7 +213,7 @@ $colorrose: #ff1f50;
       transform: translateY(-20px);
     }
     .btnadd {
-      padding-bottom: 60px;
+      padding-bottom: 70px;
     }
     .price {
       transition: all 0.5s ease;
