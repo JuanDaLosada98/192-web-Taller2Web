@@ -17,47 +17,7 @@
 
     <div class="wrapperP">
 
-        <div class="wrapperLCR">
-            <div class="listCartR">
-
-                <div class="productsAddedC">
-
-                    {{#each addedp}}
-                    <div class="generalproduct">
-
-                        <div class="btnadd"><a class="btnaddg" data-name="{{this._id}}"><img class="imgbtnadd"
-                                    src="/images/add.png" alt=""></a>
-                        </div>
-                        <a href="/product/{{this._id}}"> <img class="imgProduct" src="{{image}}" alt=""></a>
-                        <a class="name" href="/product/{{this._id}}">{{name}}</a>
-                        <p class="descript">{{description}}</p>
-                        <p class="price">${{price}}</p>
-
-
-                    </div>
-                    {{/each}}
-
-                </div>
-
-
-
-
-
-                <div class="carshop">
-                    <div class="lenghtCont">
-                        <p class="carshop__lenght">{{cartLength}}</p>
-                    </div>
-
-                    <div class="carshop__btn">
-                        <img src="/images/carrito.png" alt="" class="carshop__img">
-                    </div>
-                </div>
-
-
-
-            </div>
-        </div>
-
+        
         <header class="header">
             <div class="header__top centrar">
                 <div class="header__toplogo">

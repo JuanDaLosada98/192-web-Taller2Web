@@ -39,6 +39,7 @@ function createRoutes (app, db) {
                     response.send({
                         message: 'error',
                         cartLength: cartList.length,
+                        cartList: cartList
                         
                     });
                     return;
@@ -48,7 +49,7 @@ function createRoutes (app, db) {
                 console.log("cartList[0]");
                 response.send({
                     cartLength: cartList.length,
-                        
+                    cartList: cartList    
                 });
 
             });
@@ -95,7 +96,7 @@ function createRoutes (app, db) {
                 //aseguramos de que no hay error
                 assert.equal(null, err);
                 var listCopy = result.slice();
-                var addedPro = cartList.slice();
+                
 
                 if (request.query.filter == "0-$10.000") {
                     listCopy = listCopy.filter(function(elem) {
@@ -255,7 +256,7 @@ function createRoutes (app, db) {
 
                 var context = {
                     products: listCopy,
-                    addedp: addedPro
+                    
                 };
 
 
