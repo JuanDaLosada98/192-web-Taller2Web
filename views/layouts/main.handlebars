@@ -22,11 +22,21 @@
 
                 <div class="productsAddedC">
 
+                    {{#each addedp}}
+                    <div class="generalproduct">
+
+                        <div class="btnadd"><a class="btnaddg" data-name="{{this._id}}"><img class="imgbtnadd"
+                                    src="/images/add.png" alt=""></a>
+                        </div>
+                        <a href="/product/{{this._id}}"> <img class="imgProduct" src="{{image}}" alt=""></a>
+                        <a class="name" href="/product/{{this._id}}">{{name}}</a>
+                        <p class="descript">{{description}}</p>
+                        <p class="price">${{price}}</p>
 
 
+                    </div>
+                    {{/each}}
 
-
-                    
                 </div>
 
 

@@ -10,10 +10,6 @@ function createRoutes (app, db) {
         response.sendFile(__dirname + '/public/index.html');
     });
 
-    // app.get('/tiendass', (request, response) => {
-    //     console.log('Alguien entró a la tienda');
-    //     response.render('store');
-    // });
     app.post('/api/cart/:id', (request, response) => {
         var id = request.params.id;
         const products = db.collection('products');
@@ -42,7 +38,8 @@ function createRoutes (app, db) {
                 if (!esId) {
                     response.send({
                         message: 'error',
-                        cartLength: cartList.length
+                        cartLength: cartList.length,
+                        
                     });
                     return;
                 }
@@ -50,7 +47,8 @@ function createRoutes (app, db) {
 
                 console.log("cartList[0]");
                 response.send({
-                    cartLength: cartList.length
+                    cartLength: cartList.length,
+                        
                 });
 
             });
@@ -83,7 +81,12 @@ function createRoutes (app, db) {
     
     app.get('/store', (request, response) => {
         const products = db.collection('products');
-        console.log('Alguien entró a la tienda');
+        
+        console.log(cartList);
+
+
+
+
 
         //buscamos todos los productos
         products.find({})
@@ -92,6 +95,7 @@ function createRoutes (app, db) {
                 //aseguramos de que no hay error
                 assert.equal(null, err);
                 var listCopy = result.slice();
+                var addedPro = cartList.slice();
 
                 if (request.query.filter == "0-$10.000") {
                     listCopy = listCopy.filter(function(elem) {
@@ -250,7 +254,8 @@ function createRoutes (app, db) {
                 }
 
                 var context = {
-                    products: listCopy
+                    products: listCopy,
+                    addedp: addedPro
                 };
 
 

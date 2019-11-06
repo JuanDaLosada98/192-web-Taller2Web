@@ -2759,6 +2759,12 @@ input[type=range]:focus::-ms-fill-upper {
     transition: all 0.4s ease;
     -webkit-box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.6);
     box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.6); }
+    .wrapperLCR .listCartR .productsAddedC {
+      width: 100%;
+      display: -ms-grid;
+      display: grid;
+      -ms-grid-columns: auto auto auto auto;
+      grid-template-columns: auto auto auto auto; }
     .wrapperLCR .listCartR .carshop {
       position: fixed;
       bottom: 660px;

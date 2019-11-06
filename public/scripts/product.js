@@ -4,8 +4,10 @@ window.addEventListener('load', function(){
     var addBtn = document.querySelectorAll('.btnaddg');
     var countCart = document.querySelector('.carshop__lenght');
     var addBtnVP = document.querySelectorAll('.btnAddBuy__AddText');
-    
+  
     addBtn.forEach(function (btn) {
+
+
         
         btn.addEventListener('click', function(event){
             event.preventDefault();
