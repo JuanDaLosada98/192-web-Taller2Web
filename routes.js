@@ -80,9 +80,9 @@ function createRoutes (app, db) {
     });
     
     app.get('/store', (request, response) => {
-        const products = db.collection('products');
         
-        console.log(cartList);
+        const products = db.collection('products');
+        //console.log(cartList);
 
 
 
