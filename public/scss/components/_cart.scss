@@ -1,5 +1,6 @@
 $colorwhite: white;
 $colorrose: #ff1f50;
+
 .wrapperLCR {
   width: 100%;
   display: flex;
@@ -8,6 +9,10 @@ $colorrose: #ff1f50;
 
   .listCartR {
     position: fixed;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
     width: 40%;
     height: 100vh;
     right: 0;
@@ -16,18 +21,22 @@ $colorrose: #ff1f50;
     transform: translate(100%, 0%);
     transition: all 0.4s ease;
     box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.6);
+    border-radius: 15px 0 0 0;
+    padding: 30px;
 
-    .productsAddedC{
-        width: 100%;
-        display: grid;
-        grid-template-columns: auto auto auto auto;
+    .productsAddedC {
+      width: 100%;
+      display: grid;
+      grid-template-columns: auto auto auto;
+      align-items: start;
+      justify-items: center;
 
-        
+      @import "productsAdd";
     }
 
     .carshop {
       position: fixed;
-      bottom: 660px;
+      
       right: 100%;
       transition: all 0.5s ease;
       z-index: 3;
@@ -37,7 +46,6 @@ $colorrose: #ff1f50;
       }
     }
     .carshop--active {
-      
       transition: all 0.5s ease;
     }
     .lenghtCont {

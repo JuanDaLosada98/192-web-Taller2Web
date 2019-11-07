@@ -1,5 +1,8 @@
 $colorwhite: white;
 $colorrose: #ff1f50;
+
+
+
 .titleshop {
   display: flex;
   flex-direction: column;
@@ -81,11 +84,12 @@ $colorrose: #ff1f50;
       transition: all 0.5s ease;
      
       &:hover {
-        height: 340px;
+        height: 350px;
         transition: all 0.5s ease;
         .btnaddg {
           transform: translateY(-20px);
         }
+        
         .btnadd {
           padding-bottom: 60px;
         }
@@ -108,6 +112,7 @@ $colorrose: #ff1f50;
           font-size: 13px;
           text-align: center;
           margin-bottom: 8px;
+          padding: 5px;
           opacity: 1;
         }
       }

@@ -31,15 +31,18 @@ window.addEventListener('load', function(){
 
                         
 
-                        element.classList.add('generalproduct');
+                        element.classList.add('generalproductAdd');
                         element.innerHTML = `
-                            <div class="btndeleteP"><a class="btndeleteP__link" data-name="${product._id}"><img class="imgbtnadd"
+                            <div class="btndeleteP"><a class="btndeleteP__link" data-name="${product._id}"><img class="imgbtndelete"
                                         src="/images/add.png" alt=""></a>
                             </div>
-                            <a href="/product/${product._id}"> <img class="imgProduct" src="${product.image}" alt=""></a>
+                            <img class="counterPcont" src="/images/number.png" alt="">
+                            
+                            
+                            <a href="/product/${product._id}"> <img class="imgProductAdd" src="${product.image}" alt=""></a>
+                            
                             <a class="name" href="/product/${product._id}">${product.name}</a>
-                            <p class="descript">${product.description}</p>
-                            <p class="price">${product.price}</p>`;
+                            <p class="pricePadd">$${product.price}</p>`;
 
                         productsContainer.appendChild(element);
                         

@@ -1877,7 +1877,7 @@ input[type=range]:focus::-ms-fill-upper {
       -o-transition: all 0.5s ease;
       transition: all 0.5s ease; }
       .gcontainer .gcontainer__products .generalproduct:hover {
-        height: 340px;
+        height: 350px;
         -webkit-transition: all 0.5s ease;
         -o-transition: all 0.5s ease;
         transition: all 0.5s ease; }
@@ -1913,6 +1913,7 @@ input[type=range]:focus::-ms-fill-upper {
           font-size: 13px;
           text-align: center;
           margin-bottom: 8px;
+          padding: 5px;
           opacity: 1; }
       .gcontainer .gcontainer__products .generalproduct .imgProduct {
         position: relative;
@@ -2746,6 +2747,16 @@ input[type=range]:focus::-ms-fill-upper {
   align-items: flex-end; }
   .wrapperLCR .listCartR {
     position: fixed;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
     width: 40%;
     height: 100vh;
     right: 0;
@@ -2758,16 +2769,134 @@ input[type=range]:focus::-ms-fill-upper {
     -o-transition: all 0.4s ease;
     transition: all 0.4s ease;
     -webkit-box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.6);
-    box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.6); }
+    box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.6);
+    border-radius: 15px 0 0 0;
+    padding: 30px; }
     .wrapperLCR .listCartR .productsAddedC {
       width: 100%;
       display: -ms-grid;
       display: grid;
-      -ms-grid-columns: auto auto auto auto;
-      grid-template-columns: auto auto auto auto; }
+      -ms-grid-columns: auto auto auto;
+      grid-template-columns: auto auto auto;
+      -webkit-box-align: start;
+      -ms-flex-align: start;
+      align-items: start;
+      justify-items: center; }
+      .wrapperLCR .listCartR .productsAddedC .generalproductAdd {
+        width: 181.42px;
+        height: 244.19px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -ms-flex-line-pack: center;
+        align-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        background: white;
+        border-radius: 15px;
+        padding: 10px;
+        margin-bottom: 20px;
+        -webkit-box-shadow: -10px 10px 4px rgba(0, 0, 0, 0.25);
+        box-shadow: -10px 10px 4px rgba(0, 0, 0, 0.25);
+        -webkit-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease; }
+        .wrapperLCR .listCartR .productsAddedC .generalproductAdd:hover {
+          -webkit-transform: scale(0.9);
+          -ms-transform: scale(0.9);
+          transform: scale(0.9); }
+          .wrapperLCR .listCartR .productsAddedC .generalproductAdd:hover .btndeleteP__link {
+            -webkit-transform: translateY(-20px);
+            -ms-transform: translateY(-20px);
+            transform: translateY(-20px); }
+          .wrapperLCR .listCartR .productsAddedC .generalproductAdd:hover .btndeleteP {
+            padding-bottom: 60px; }
+        .wrapperLCR .listCartR .productsAddedC .generalproductAdd .counterPcont {
+          position: absolute;
+          width: 45px;
+          height: 44px;
+          z-index: 2;
+          cursor: pointer; }
+        .wrapperLCR .listCartR .productsAddedC .generalproductAdd .pricePadd {
+          -webkit-transition: all 0.5s ease;
+          -o-transition: all 0.5s ease;
+          transition: all 0.5s ease;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          font-family: fr-bold;
+          color: grey;
+          font-size: 15px;
+          text-align: center;
+          opacity: 1;
+          margin: 0; }
+        .wrapperLCR .listCartR .productsAddedC .generalproductAdd .btndeleteP {
+          position: absolute;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-orient: horizontal;
+          -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+          flex-direction: row;
+          -webkit-box-pack: end;
+          -ms-flex-pack: end;
+          justify-content: flex-end;
+          -webkit-box-align: end;
+          -ms-flex-align: end;
+          align-items: flex-end;
+          -webkit-transition: all 0.5s ease;
+          -o-transition: all 0.5s ease;
+          transition: all 0.5s ease; }
+        .wrapperLCR .listCartR .productsAddedC .generalproductAdd .btndeleteP__link {
+          position: relative;
+          width: 45px;
+          height: 44px;
+          z-index: 2;
+          cursor: pointer;
+          left: 60px;
+          top: 119.5px;
+          -webkit-transition: all 0.5s ease;
+          -o-transition: all 0.5s ease;
+          transition: all 0.5s ease; }
+        .wrapperLCR .listCartR .productsAddedC .generalproductAdd .imgbtndelete {
+          width: 45px;
+          height: 44px;
+          -webkit-transition: all 0.5s ease;
+          -o-transition: all 0.5s ease;
+          transition: all 0.5s ease;
+          z-index: 1;
+          -webkit-transform: rotateZ(45deg);
+          -ms-transform: rotate(45deg);
+          transform: rotateZ(45deg); }
+          .wrapperLCR .listCartR .productsAddedC .generalproductAdd .imgbtndelete:hover {
+            -webkit-transform: rotateZ(315deg);
+            -ms-transform: rotate(315deg);
+            transform: rotateZ(315deg); }
+        .wrapperLCR .listCartR .productsAddedC .generalproductAdd .imgProductAdd {
+          width: 100%;
+          border-radius: 15px; }
+        .wrapperLCR .listCartR .productsAddedC .generalproductAdd .name {
+          font-family: fr-bold;
+          color: #ff1f50;
+          font-size: 15px;
+          margin-top: 10px;
+          margin-bottom: 10px;
+          -webkit-transition: all 0.5s ease;
+          -o-transition: all 0.5s ease;
+          transition: all 0.5s ease; }
+          .wrapperLCR .listCartR .productsAddedC .generalproductAdd .name:hover {
+            -webkit-transform: scale(1.15);
+            -ms-transform: scale(1.15);
+            transform: scale(1.15);
+            text-decoration: none; }
     .wrapperLCR .listCartR .carshop {
       position: fixed;
-      bottom: 660px;
       right: 100%;
       -webkit-transition: all 0.5s ease;
       -o-transition: all 0.5s ease;

@@ -1,0 +1,93 @@
+$colorwhite: white;
+$colorrose: #ff1f50;
+
+.generalproductAdd {
+  width: 181.42px;
+  height: 244.19px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  background: $colorwhite;
+  border-radius: 15px;
+  padding: 10px;
+  margin-bottom: 20px;
+  box-shadow: -10px 10px 4px rgba(0, 0, 0, 0.25);
+  transition: all 0.5s ease;
+  &:hover {
+    transform: scale(0.9);
+    .btndeleteP__link {
+      transform: translateY(-20px);
+    }
+
+    .btndeleteP {
+      padding-bottom: 60px;
+    }
+  }
+  .counterPcont {
+    position: absolute;
+    width: 45px;
+    height: 44px;
+    z-index: 2;
+    cursor: pointer;
+    
+    
+  }
+ 
+  .pricePadd {
+    transition: all 0.5s ease;
+    display: flex;
+    font-family: fr-bold;
+    color: grey;
+    font-size: 15px;
+    text-align: center;
+    opacity: 1;
+    margin: 0;
+  }
+
+  .btndeleteP {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+    transition: all 0.5s ease;
+  }
+
+  .btndeleteP__link {
+    position: relative;
+    width: 45px;
+    height: 44px;
+    z-index: 2;
+    cursor: pointer;
+    left: 60px;
+    top: 119.5px;
+    transition: all 0.5s ease;
+  }
+  .imgbtndelete {
+    width: 45px;
+    height: 44px;
+    transition: all 0.5s ease;
+    z-index: 1;
+    transform: rotateZ(45deg);
+    &:hover {
+      transform: rotateZ(315deg);
+    }
+  }
+  .imgProductAdd {
+    width: 100%;
+    border-radius: 15px;
+  }
+  .name {
+    font-family: fr-bold;
+    color: $colorrose;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    transition: all 0.5s ease;
+    &:hover {
+      transform: scale(1.15);
+      text-decoration: none;
+    }
+  }
+}
