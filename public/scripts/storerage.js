@@ -3,49 +3,86 @@ class Store {
     constructor() {
         this.renderStorage = document.querySelector('.productsAddedC');
         this.products = [];
-
         this.renderAddBtn = document.querySelectorAll('.btnaddg');
         this.renderCountCart = document.querySelector('.carshop__lenght');
+        this.configStore();
+        this.getAllProducts();
     }
 
-    addProducts(product) {
-        this.addProductServer(product, () => {
+    
+    configStore() {
+        if (this.renderAddBtn != null) {
+            this.renderAddBtn.forEach((btn) => {
+                btn.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    var id = btn.getAttribute('data-name');
+                    this.addProducts(id);
+                });
+            });
+        }
+    }
+
+    getAllProducts() {
+        this.updateServer((products) => {
+            console.log(products)
+            products.forEach((p) => {
+                var product = new Product(p._id, p.image, p.name, p.price, this);
+                this.products.push(product);
+            });
+            this.update();
+        });
+
+
+    }
+
+    addProducts(id) {
+        this.addProductServer(id, (p) => {
+            var product = new Product(p._id, p.image, p.name, p.price, this);
             this.products.push(product);
-            this.renderCountCart.innerHTML = this.products.length;
+
             this.update();
         });
     }
 
     delete(product) {
-        var index = this.products.indexOf(product);
-        this.products.splice(index, 1);
-        this.update();
+        this.removeProductServer(product, () => {
+            var index = this.products.indexOf(product);
+            this.products.splice(index, 1);
+            this.update();
+        });
+
     }
 
     update() {
         var duplicateProducts = [];
+        this.renderCountCart.innerHTML = this.products.length;
         this.renderStorage.innerHTML = "";
         this.products.forEach(product => {
             let found = false;
             duplicateProducts.forEach(duplicateProduct => {
                 if (duplicateProduct.name == product.name) {
-                    duplicateProduct.cont++;
+                    duplicateProduct.cont += 1;
+                    duplicateProduct.setCount(duplicateProduct.cont);
                     found = true;
                 }
             })
             if (!found) {
+                product.setCount(1);
                 duplicateProducts.push(product);
-            }
 
+            }
         })
+
+       
+
         duplicateProducts.forEach(duplicateProduct => {
             this.renderStorage.appendChild(duplicateProduct.render());
 
         })
     }
 
-    addProductServer(product, load) {
-        var promise = fetch('/api/cart/' + product.id, {
+    addProductServer(id, load) {
+        var promise = fetch('/api/cart/' + id, {
             method: 'POST'
         });
 
@@ -53,18 +90,19 @@ class Store {
             .then(function (response) {
                 return response.json();
             })
-            .then(function (data) {
-                console.log(data);
-                console.log(data.cartList);
+            .then(function (product) {
+                console.log(product);
+
                 if (load) {
-                    load();
+                    // Respuesta
+                    load(product);
                 }
             });
     }
 
     removeProductServer(product, load) {
         var promise = fetch('/api/cart/' + product.id, {
-            method: 'REMOVE'
+            method: 'DELETE'
         });
 
         promise
@@ -81,22 +119,22 @@ class Store {
 
     }
 
-    updateServer() {
-
-    }
-
-    configStore() {
-        this.renderAddBtn.forEach(function (btn) {
-
-            btn.addEventListener('click', function (event) {
-                event.preventDefault();
-                var id = btn.getAttribute('data-name');
-
-
-            });
-
+    updateServer(load) {
+        var promise = fetch('/api/cart/product', {
+            method: 'GET'
         });
+
+        promise
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (products) {
+                if (load) {
+                    load(products);
+                }
+            });
     }
+
 
 
 
@@ -113,16 +151,19 @@ class Product {
         this.element = document.createElement('div');
         this.store = store;
         this.element.classList.add('generalproductAdd');
-        this.createView();
+        this.renderCont = undefined;
         this.cont = 1;
+
+        this.createView();
     }
     createView() {
         this.element.innerHTML = `
         <div class="btndeleteP"><a class="btndeleteP__link" data-name="${this.id}"><img class="imgbtndelete"
         src="/images/add.png" alt=""></a>
         </div>
+        
         <img class="counterPcont" src="/images/number.png" alt="">
-        <h1>${this.cont}</h1>
+        <h1 class="count" style="z-index:999;">${this.cont}</h1>
         
         
         <a href="/product/${this.id}"> <img class="imgProductAdd" src="${this.image}" alt=""></a>
@@ -135,6 +176,14 @@ class Product {
             this.delete();
         })
 
+        this.renderCont = this.element.querySelector(".count");
+        this.renderCont.innerHTML = this.cont;
+
+    }
+
+    setCount(number) {
+        this.cont = number;
+        this.renderCont.innerHTML = this.cont + "";
     }
 
     render() {
@@ -145,3 +194,9 @@ class Product {
         this.store.delete(this);
     }
 }
+
+
+/**Config */
+
+
+var store = new Store();

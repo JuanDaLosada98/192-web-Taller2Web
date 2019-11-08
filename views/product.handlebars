@@ -8,11 +8,9 @@
 
 
 
-
-
         <div class="carshop">
             <div class="lenghtCont">
-                <p class="carshop__lenght">{{cartLength}}</p>
+                <p class="carshop__lenght">{{product.cartLength}}</p>
             </div>
 
             <div class="carshop__btn">
@@ -30,26 +28,26 @@
     <div class="gProductContainer">
         <div class="gProductContainer__titles">
             <div class="producTitle">
-                <p class="producTitle__1">{{name}}</p>
+                <p class="producTitle__1">{{product.name}}</p>
             </div>
             <div class="productSubTitle">
-                <p class="producTitle__2">{{description}}</p>
+                <p class="producTitle__2">{{product.description}}</p>
             </div>
         </div>
         <div class="gProductContainer__contents">
 
             <div class="oneproduct">
 
-                <img class="oneImgProduct" src="{{image}}" alt="">
+                <img class="oneImgProduct" src="{{product.image}}" alt="">
 
             </div>
 
             <div class="contentsDQ">
-                <div class="pricelabel">${{price}}
+                <div class="pricelabel">${{product.price}}
                 </div>
                 <div class="frameD">
                     <div class="contentsDQ__description">
-                        <p class="caracteristicsP">{{moredescription}}
+                        <p class="caracteristicsP">{{product.moredescription}}
                         </p>
                     </div>
                 </div>
@@ -66,7 +64,7 @@
                         </button>
                     </div>
                     <div class="btnAddBuy__Add">
-                        <a class="btnAddBuy__AddText" data-name="{{this._id}}">ADD TO CART</a>
+                        <a class="btnAddBuy__AddText" data-name="{{product._id}}">ADD TO CART</a>
                     </div>
                 </div>
 
@@ -93,20 +91,29 @@
 
     <div class="recommendedP">
 
+        {{#each recomend}}
+
+
+
+
         <div class="generalproduct">
 
             <div class="btnadd"><a class="btnaddg" data-name="{{this._id}}"><img class="imgbtnadd" src="/images/add.png"
                         alt=""></a>
             </div>
-            <a href="/product/{{this._id}}"> <img class="imgProduct" src="{{image}}" alt=""></a>
-            <p class="descript">{{description}}</p>
-            <p class="price">${{price}}</p>
+            <a href="/product/{{this._id}}/{{this.danger}}"> <img class="imgProduct" src="{{this.image}}" alt=""></a>
+            <p class="descript">{{this.description}}</p>
+            <p class="price">${{this.price}}</p>
 
-            <a class="name" href="/product/{{this._id}}">{{name}}</a>
+            <a class="name" href="/product/{{this._id}}">{{this.name}}</a>
         </div>
 
+
+
+        {{/each}}
     </div>
 </div>
 
 
+<script src="/scripts/storerage.js"></script>
 <script src="/scripts/product.js"></script>

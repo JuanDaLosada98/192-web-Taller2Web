@@ -140,8 +140,8 @@
                     <input type="text" placeholder="Example: 23819209" class="bottom__input" name="iddata" id="">
 
                     <div class="frameL__bottomCheck">
-                        <label>Cash<input type="checkbox" class="check" value="cashCheck"></label>
-                        <label>Card<input type="checkbox" class="check" value="cardCheck"></label>
+                        <label>Cash<input type="radio" class="check" name= "metodoDePago" value="cashCheck"></label>
+                        <label>Card<input type="radio" class="check" name= "metodoDePago" value="cardCheck"></label>
                     </div>
 
                     <div class="bottom__contain">
@@ -161,10 +161,10 @@
 
                 <div class="productbuy">
 
-                    <img class="imgPB" src="{{image}}" alt="">
-                    <a class="name" href="/product/{{this._id}}">{{name}}</a>
-                    <p class="descript">{{description}}</p>
-                    <p class="price">${{price}}</p>
+                    <img class="imgPB" src="{{product.image}}" alt="">
+                    <a class="name" href="/product/{{product._id}}/{{product.danger}}">{{product.name}}</a>
+                    <p class="descript">{{product.description}}</p>
+                    <p class="price">${{product.price}}</p>
 
 
                 </div>

@@ -59,7 +59,7 @@ function createRoutes(app, db) {
     */
 
     app.get('/api/cart/:id', (request, response) => {
-        response(cartList);
+        response.send(cartList);
     });
 
     app.post('/api/cart/:id', (request, response) => {
@@ -72,24 +72,24 @@ function createRoutes(app, db) {
             // transformamos el cursor a un arreglo
             .toArray((err, result) => {
                 // asegurarnos de que no hay error
-
+                var product = null;
                 for (let c = 0; c < result.length; c++) {
                     if (id.toString() === result[c]._id.toString()) {
                         esId = true;
-                        cartList.push(result[c]);
+                        product = result[c]
+                        cartList.push(product);
                     }
                 }
+
 
                 if (!esId) {
                     response.send({
                         message: 'error',
-                        cartList: cartList
+                        cartList: product
                     });
                     return;
                 } else {
-                    response.send({
-                        cartList: cartList
-                    });
+                    response.send(product);
                 }
 
 
@@ -101,36 +101,72 @@ function createRoutes(app, db) {
 
         for (let i = 0; i < cartList.length; i++) {
             let product = cartList[i];
-            if(id === product._id){
+           
+            if (id == product._id) {
                 cartList.splice(i, 1);
                 i = cartList.length;
             }
         }
+      
 
-        response.send()
+        response.send(cartList);
     });
 
 
-    app.get('/product/:id', function (req, res) {
+    app.get('/product/:id/:danger', function (req, res) {
+        var id = req.params.id;
+        var danger = req.params.danger;
         const products = db.collection('products');
-        var query = {};
-        products.find({})
+        var data ={
+            danger:danger
+        };
+        var query = {
+         
+        };
+        products.find(query)
             // transformamos el cursor a un arreglo
             .toArray((err, result) => {
                 // asegurarnos de que noh ay error
+                data.recomend = [];
 
+                var productsRecomend = [];
                 //
                 var c = 0;
                 for (c; c < result.length; c++) {
-                    if (req.params.id.toString() === result[c]._id.toString()) {
+                    if (id.toString() === result[c]._id.toString()) {
                         result[c].cartLength = cartList.length,
-                            res.render('product', result[c]);
+                        data.product = result[c];
                     }
-
+                    productsRecomend.push(result[c]);
+                    
                 }
 
+                function shuffle(a) {
+                    var j, x, i;
+                    for (i = a.length - 1; i > 0; i--) {
+                        j = Math.floor(Math.random() * (i + 1));
+                        x = a[i];
+                        a[i] = a[j];
+                        a[j] = x;
+                    }
+                    return a;
+                }
 
+                shuffle(productsRecomend)
+
+                for (let i = 0; i < productsRecomend.length; i++) {
+                    let product = productsRecomend[i];
+
+                    if(danger == product.danger.toString() && id.toString() != product._id.toString() && data.recomend.length < 3){
+                        data.recomend.push(product);
+                    }
+                }
+
+            
+                res.render('product', data);
             });
+
+            
 
     });
 
