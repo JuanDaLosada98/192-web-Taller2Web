@@ -2774,6 +2774,7 @@ input[type=range]:focus::-ms-fill-upper {
     padding: 30px; }
     .wrapperLCR .listCartR .productsAddedC {
       width: 100%;
+      height: 85%;
       display: -ms-grid;
       display: grid;
       -ms-grid-columns: auto auto auto;
@@ -2781,8 +2782,10 @@ input[type=range]:focus::-ms-fill-upper {
       -webkit-box-align: start;
       -ms-flex-align: start;
       align-items: start;
-      justify-items: center; }
+      justify-items: center;
+      overflow: auto; }
       .wrapperLCR .listCartR .productsAddedC .generalproductAdd {
+        position: relative;
         width: 181.42px;
         height: 244.19px;
         display: -webkit-box;
@@ -2895,6 +2898,8 @@ input[type=range]:focus::-ms-fill-upper {
             -ms-transform: scale(1.15);
             transform: scale(1.15);
             text-decoration: none; }
+      .wrapperLCR .listCartR .productsAddedC::-webkit-scrollbar {
+        display: none; }
     .wrapperLCR .listCartR .carshop {
       position: fixed;
       right: 100%;
