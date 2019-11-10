@@ -100,7 +100,10 @@ $colorrose: #ff1f50;
           color: $colorrose;
           font-size: 15px;
           text-align: center;
+          
+          margin: 0;
           opacity: 1;
+
         }
         .descript {
           transition: all 0.5s ease;
@@ -113,7 +116,10 @@ $colorrose: #ff1f50;
           text-align: center;
           margin-bottom: 8px;
           padding: 5px;
+          
+
           opacity: 1;
+
         }
       }
 
@@ -141,15 +147,23 @@ $colorrose: #ff1f50;
       }
 
       .price {
-        display: none;
+        display: flex;
         opacity: 0;
+        font-family: fr-bold;
+          color: $colorrose;
+          font-size: 15px;
+          text-align: center;
         transition: all 0.5s ease;
         margin: 0;
       }
       .descript {
         opacity: 0;
-
-        display: none;
+        font-family: fr-bold;
+          color: grey;
+          font-size: 13px;
+          text-align: center;
+          padding: 5px;
+        display: flex;
         transition: all 0.5s ease;
       }
       .btnadd {

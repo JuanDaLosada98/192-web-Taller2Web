@@ -1898,6 +1898,7 @@ input[type=range]:focus::-ms-fill-upper {
           color: #ff1f50;
           font-size: 15px;
           text-align: center;
+          margin: 0;
           opacity: 1; }
         .gcontainer .gcontainer__products .generalproduct:hover .descript {
           -webkit-transition: all 0.5s ease;
@@ -1941,15 +1942,28 @@ input[type=range]:focus::-ms-fill-upper {
           transform: scale(1.15);
           text-decoration: none; }
       .gcontainer .gcontainer__products .generalproduct .price {
-        display: none;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
         opacity: 0;
+        font-family: fr-bold;
+        color: #ff1f50;
+        font-size: 15px;
+        text-align: center;
         -webkit-transition: all 0.5s ease;
         -o-transition: all 0.5s ease;
         transition: all 0.5s ease;
         margin: 0; }
       .gcontainer .gcontainer__products .generalproduct .descript {
         opacity: 0;
-        display: none;
+        font-family: fr-bold;
+        color: grey;
+        font-size: 13px;
+        text-align: center;
+        padding: 5px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
         -webkit-transition: all 0.5s ease;
         -o-transition: all 0.5s ease;
         transition: all 0.5s ease; }
