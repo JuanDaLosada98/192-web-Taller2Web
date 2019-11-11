@@ -2318,7 +2318,171 @@ input[type=range]:focus::-ms-fill-upper {
   width: 70px; }
 
 .recommendedP {
-  margin-top: 60px; }
+  width: 50%;
+  margin-top: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-pack: distribute;
+  justify-content: space-around; }
+  .recommendedP .generalproduct {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background: white;
+    border-radius: 15px;
+    margin-left: 30px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    width: 210px;
+    height: 260px;
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease; }
+    .recommendedP .generalproduct:hover {
+      height: 350px;
+      -webkit-transition: all 0.5s ease;
+      -o-transition: all 0.5s ease;
+      transition: all 0.5s ease; }
+      .recommendedP .generalproduct:hover .btnaddg {
+        -webkit-transform: translateY(-20px);
+        -ms-transform: translateY(-20px);
+        transform: translateY(-20px); }
+      .recommendedP .generalproduct:hover .btnadd {
+        padding-bottom: 60px; }
+      .recommendedP .generalproduct:hover .price {
+        -webkit-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        font-family: fr-bold;
+        color: #ff1f50;
+        font-size: 15px;
+        text-align: center;
+        margin: 0;
+        opacity: 1; }
+      .recommendedP .generalproduct:hover .descript {
+        -webkit-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        transition: all 0.5s ease;
+        display: flex;
+        font-family: fr-bold;
+        color: grey;
+        font-size: 13px;
+        text-align: center;
+        margin-bottom: 8px;
+        padding: 5px;
+        opacity: 1; }
+    .recommendedP .generalproduct .imgProduct {
+      position: relative;
+      margin: 5px 5px 5px 5px;
+      width: 190.38px;
+      height: 190.38px;
+      border-radius: 15px;
+      margin-top: 10px;
+      -webkit-transition: all 0.5s ease;
+      -o-transition: all 0.5s ease;
+      transition: all 0.5s ease;
+      z-index: 1; }
+    .recommendedP .generalproduct .name {
+      font-family: fr-bold;
+      color: #ff1f50;
+      font-size: 15px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      -webkit-transition: all 0.5s ease;
+      -o-transition: all 0.5s ease;
+      transition: all 0.5s ease; }
+      .recommendedP .generalproduct .name:hover {
+        -webkit-transform: scale(1.15);
+        -ms-transform: scale(1.15);
+        transform: scale(1.15);
+        text-decoration: none; }
+    .recommendedP .generalproduct .price {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      opacity: 0;
+      font-family: fr-bold;
+      color: #ff1f50;
+      font-size: 15px;
+      text-align: center;
+      -webkit-transition: all 0.5s ease;
+      -o-transition: all 0.5s ease;
+      transition: all 0.5s ease;
+      margin: 0; }
+    .recommendedP .generalproduct .descript {
+      opacity: 0;
+      font-family: fr-bold;
+      color: grey;
+      font-size: 13px;
+      text-align: center;
+      padding: 5px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-transition: all 0.5s ease;
+      -o-transition: all 0.5s ease;
+      transition: all 0.5s ease; }
+    .recommendedP .generalproduct .btnadd {
+      position: absolute;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-box-pack: end;
+      -ms-flex-pack: end;
+      justify-content: flex-end;
+      -webkit-box-align: end;
+      -ms-flex-align: end;
+      align-items: flex-end;
+      -webkit-transition: all 0.5s ease;
+      -o-transition: all 0.5s ease;
+      transition: all 0.5s ease; }
+    .recommendedP .generalproduct .imgbtnadd {
+      width: 45px;
+      height: 44px;
+      -webkit-transition: all 0.5s ease;
+      -o-transition: all 0.5s ease;
+      transition: all 0.5s ease;
+      z-index: 1; }
+      .recommendedP .generalproduct .imgbtnadd:hover {
+        -webkit-transform: scale(1.18);
+        -ms-transform: scale(1.18);
+        transform: scale(1.18); }
+    .recommendedP .generalproduct .btnaddg {
+      position: relative;
+      width: 45px;
+      height: 44px;
+      z-index: 2;
+      cursor: pointer;
+      left: 77px;
+      top: 156.5px;
+      -webkit-transition: all 0.5s ease;
+      -o-transition: all 0.5s ease;
+      transition: all 0.5s ease; }
 
 .generalproduct {
   display: -webkit-box;
@@ -2688,8 +2852,6 @@ input[type=range]:focus::-ms-fill-upper {
           display: -webkit-box;
           display: -ms-flexbox;
           display: flex;
-          transition: all 0.5s ease;
-          display: flex;
           font-family: fr-bold;
           color: grey;
           font-size: 13px;
@@ -2703,13 +2865,23 @@ input[type=range]:focus::-ms-fill-upper {
         -webkit-transition: all 0.5s ease;
         -o-transition: all 0.5s ease;
         transition: all 0.5s ease;
-        display: none;
+        font-family: fr-bold;
+        color: #ff1f50;
+        font-size: 15px;
+        text-align: center;
         opacity: 0; }
       .modal__frame .modal__frameR .productbuy .descript {
         -webkit-transition: all 0.5s ease;
         -o-transition: all 0.5s ease;
         transition: all 0.5s ease;
-        display: none;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        font-family: fr-bold;
+        color: grey;
+        font-size: 13px;
+        text-align: center;
+        margin-bottom: 8px;
         opacity: 0; }
       .modal__frame .modal__frameR .productbuy .name {
         font-family: fr-bold;
@@ -2785,10 +2957,70 @@ input[type=range]:focus::-ms-fill-upper {
     -webkit-box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.6);
     box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.6);
     border-radius: 15px 0 0 0;
-    padding: 30px; }
+    padding: 30px;
+    background-image: url(/images/trama.png);
+    background-size: 25%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: 37%; }
+    .wrapperLCR .listCartR .containerButtons {
+      width: 100%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center; }
+      .wrapperLCR .listCartR .containerButtons .buttonCart {
+        color: white;
+        background: #ff1f50;
+        border: none;
+        font-family: fr-bold;
+        border-radius: 15px;
+        font-size: 30px;
+        -webkit-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+        margin-top: 15px;
+        padding-right: 50px;
+        padding-left: 50px;
+        text-shadow: -5px 5px 4px rgba(0, 0, 0, 0.5); }
+        .wrapperLCR .listCartR .containerButtons .buttonCart:hover {
+          -webkit-transform: scale(0.9);
+          -ms-transform: scale(0.9);
+          transform: scale(0.9);
+          text-shadow: -1px 1px 4px rgba(0, 0, 0, 0.8); }
+    .wrapperLCR .listCartR .listCartR__title {
+      height: 7%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row; }
+      .wrapperLCR .listCartR .listCartR__title .listCartR__titlet {
+        font-family: fr-bold;
+        font-size: 30px;
+        color: white; }
+        .wrapperLCR .listCartR .listCartR__title .listCartR__titlet .listCartR__text {
+          text-shadow: -5px 5px 4px rgba(0, 0, 0, 0.5); }
+    .wrapperLCR .listCartR .count {
+      position: absolute;
+      font-family: fr-bold;
+      font-size: 16px;
+      color: #ff1f50;
+      top: 23px;
+      -webkit-transform: translateX(-1px);
+      -ms-transform: translateX(-1px);
+      transform: translateX(-1px); }
     .wrapperLCR .listCartR .productsAddedC {
       width: 100%;
-      height: 85%;
+      height: 70%;
       display: -ms-grid;
       display: grid;
       -ms-grid-columns: auto auto auto;
@@ -2838,7 +3070,9 @@ input[type=range]:focus::-ms-fill-upper {
           width: 45px;
           height: 44px;
           z-index: 2;
-          cursor: pointer; }
+          -webkit-transform: scale(0.8);
+          -ms-transform: scale(0.8);
+          transform: scale(0.8); }
         .wrapperLCR .listCartR .productsAddedC .generalproductAdd .pricePadd {
           -webkit-transition: all 0.5s ease;
           -o-transition: all 0.5s ease;

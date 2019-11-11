@@ -26,7 +26,7 @@ class Store {
         this.updateServer((products) => {
             console.log(products)
             products.forEach((p) => {
-                var product = new Product(p._id, p.image, p.name, p.price, this);
+                var product = new Product(p._id, p.image, p.name, p.price, p.danger, this);
                 this.products.push(product);
             });
             this.update();
@@ -37,7 +37,7 @@ class Store {
 
     addProducts(id) {
         this.addProductServer(id, (p) => {
-            var product = new Product(p._id, p.image, p.name, p.price, this);
+            var product = new Product(p._id, p.image, p.name, p.price, p.danger, this);
             this.products.push(product);
 
             this.update();
@@ -143,11 +143,12 @@ class Store {
 }
 
 class Product {
-    constructor(id, image, name, price, store) {
+    constructor(id, image, name, price, danger, store) {
         this.id = id;
         this.image = image;
         this.name = name;
         this.price = price;
+        this.danger = danger;
         this.element = document.createElement('div');
         this.store = store;
         this.element.classList.add('generalproductAdd');
@@ -166,9 +167,9 @@ class Product {
         <h1 class="count" style="z-index:999;">${this.cont}</h1>
         
         
-        <a href="/product/${this.id}"> <img class="imgProductAdd" src="${this.image}" alt=""></a>
+        <a href="/product/${this.id}/${this.danger}"> <img class="imgProductAdd" src="${this.image}" alt=""></a>
         
-        <a class="name" href="/product/${this.id}">${this.name}</a>
+        <a class="name" href="/product/${this.id}/${this.danger}">${this.name}</a>
         <p class="pricePadd">$${this.price}</p>`;
 
         var btn__delete = this.element.querySelector(".btndeleteP__link");

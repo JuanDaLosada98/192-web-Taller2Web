@@ -1,10 +1,28 @@
 <div class="wrapperLCR">
     <div class="listCartR">
+        
+        <div class="listCartR__title">
+          
+            <div class="listCartR__titlet">
+                <p class="listCartR__text">WELCOME TO YOUR CART SHOP</p>
+            </div>
+          
+        </div>
 
         <div class="productsAddedC">
 
 
         </div>
+
+        <div class="containerButtons">
+            <div class="contain_confirmBtn">
+                <button class="buttonCart">BUY ALL</button>
+            </div>
+            <div class="contain_confirmBtn">
+                <button class="buttonCart">CLEAR CART</button>
+            </div>
+        </div>
+
 
 
 
@@ -102,10 +120,12 @@
                         alt=""></a>
             </div>
             <a href="/product/{{this._id}}/{{this.danger}}"> <img class="imgProduct" src="{{this.image}}" alt=""></a>
+
+            <a class="name" href="/product/{{this._id}}">{{this.name}}</a>
             <p class="descript">{{this.description}}</p>
             <p class="price">${{this.price}}</p>
 
-            <a class="name" href="/product/{{this._id}}">{{this.name}}</a>
+            
         </div>
 
 

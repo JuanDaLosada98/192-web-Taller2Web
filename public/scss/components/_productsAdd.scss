@@ -32,7 +32,10 @@ $colorrose: #ff1f50;
     width: 45px;
     height: 44px;
     z-index: 2;
-    cursor: pointer;
+    transform: scale(0.8);
+    
+    
+    
     
     
   }
@@ -55,7 +58,9 @@ $colorrose: #ff1f50;
     justify-content: flex-end;
     align-items: flex-end;
     transition: all 0.5s ease;
+    
   }
+  
 
   .btndeleteP__link {
     position: relative;

@@ -39,7 +39,7 @@ window.addEventListener('load', function(){
                             <img class="counterPcont" src="/images/number.png" alt="">
                             
                             
-                            <a href="/product/${product._id}"> <img class="imgProductAdd" src="${product.image}" alt=""></a>
+                            <a href="/product/${product._id}/${product.danger}"> <img class="imgProductAdd" src="${product.image}" alt=""></a>
                             
                             <a class="name" href="/product/${product._id}">${product.name}</a>
                             <p class="pricePadd">$${product.price}</p>`;

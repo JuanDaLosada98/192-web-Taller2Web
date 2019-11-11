@@ -157,8 +157,6 @@ $colorrose: #ff1f50;
         .descript {
           transition: all 0.5s ease;
           display: flex;
-          transition: all 0.5s ease;
-          display: flex;
           font-family: fr-bold;
           color: grey;
           font-size: 13px;
@@ -173,12 +171,20 @@ $colorrose: #ff1f50;
       }
       .price {
         transition: all 0.5s ease;
-        display: none;
+        font-family: fr-bold;
+        color: $colorrose;
+        font-size: 15px;
+        text-align: center;
         opacity: 0;
       }
       .descript {
         transition: all 0.5s ease;
-        display: none;
+        display: flex;
+        font-family: fr-bold;
+        color: grey;
+        font-size: 13px;
+        text-align: center;
+        margin-bottom: 8px;
         opacity: 0;
       }
       .name {
