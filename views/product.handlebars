@@ -76,7 +76,7 @@
                     <input class="quantityslice" type="number" name="quantity" min="1" max="5" step="1" value="1">
                 </div>
                 <div class="btnAddBuy">
-                    <div class="btnAddBuy__Buy">
+                    <div class="btnAddBuy__Buy" data-name="{{product._id}}">
                         <button class="btnAddBuy__buyFrame">
                             BUY NOW
                         </button>
@@ -133,6 +133,7 @@
         {{/each}}
     </div>
 </div>
+
 
 
 <script src="/scripts/storerage.js"></script>

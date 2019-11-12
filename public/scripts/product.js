@@ -1,55 +1,39 @@
-  
-window.addEventListener('load', function(){
+window.addEventListener("load", function() {
+  var addBtnVP = document.querySelectorAll(".btnAddBuy__AddText");
+  var btnAddBuyB = document.querySelectorAll(".btnAddBuy__Buy");
 
-     var addBtnVP = document.querySelectorAll('.btnAddBuy__AddText');
+  var quantityslice = this.document.querySelector(".quantityslice");
+  var containerCount = document.querySelector(".writeCount");
 
-     var quantityslice = this.document.querySelector(".quantityslice");
-     
-     addBtnVP.forEach(function (btn) {
-         
-         btn.addEventListener('click', function(event){
-             event.preventDefault();
-             var id = btn.getAttribute('data-name');
-             
-             let index = quantityslice.value;
+  addBtnVP.forEach(function(btn) {
+    btn.addEventListener("click", function(event) {
+      event.preventDefault();
+      var id = btn.getAttribute("data-name");
 
-             for (let i = 0; i < index; i++) {
-                store.addProducts(id);
-             }
+      let index = quantityslice.value;
 
-           
+      for (let i = 0; i < index; i++) {
+        store.addProducts(id);
+      }
+    });
+  });
 
-         });
- 
-     });
- 
- 
- 
-    
- 
- });
+  btnAddBuyB.forEach(function(btn) {
+    btn.addEventListener("click", function(event) {
+      event.preventDefault();
+      var id = btn.getAttribute("data-name");
 
+      let index = quantityslice.value;
+      var element = document.createElement("div");
+      element.classList.add("countContainer");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      element.innerHTML = `
+        <h1 class="count" style="z-index:999;">${index}</h1>
+        `;
+        containerCount.appendChild(element);
+    });
+  });
+});
 
 //-----------------------------------------------------
 /**
