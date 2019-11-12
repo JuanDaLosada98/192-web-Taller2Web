@@ -17,15 +17,15 @@
 
     <div class="wrapperP">
 
-        
+
         <header class="header">
             <div class="header__top centrar">
                 <div class="header__toplogo">
                     <div class="header__toplogoimg">
-                        <a href=""><img src="/images/logo.png" class="logoImg" alt=""></a>
+                        <a href="/"><img src="/images/logo.png" class="logoImg" alt=""></a>
                     </div>
                     <div class="header__topnombreLogo">
-                        <a href="#">
+                        <a href="/">
                             <div class="logoTitulo">
                                 <img src="/images/Titulo.png" class="logoTitulo__imagen" alt="">
                                 <img src="/images/Tituloalt.png" class="logoTitulo__imagen" alt="">
@@ -53,7 +53,7 @@
 
             <div class="mainnav">
                 <span class="mainnav__link">
-                    <a href="#" class="navlink">Home</a>
+                    <a href="/" class="navlink">Home</a>
                 </span>
                 <span class="mainnav__link">
                     <a href="#wegot" class="navlink">We got</a>
@@ -140,8 +140,8 @@
                     <input type="text" placeholder="Example: 23819209" class="bottom__input" name="iddata" id="">
 
                     <div class="frameL__bottomCheck">
-                        <label>Cash<input type="radio" class="check" name= "metodoDePago" value="cashCheck"></label>
-                        <label>Card<input type="radio" class="check" name= "metodoDePago" value="cardCheck"></label>
+                        <label>Cash<input type="radio" class="check" name="metodoDePago" value="cashCheck"></label>
+                        <label>Card<input type="radio" class="check" name="metodoDePago" value="cardCheck"></label>
                     </div>
 
                     <div class="bottom__contain">
@@ -160,6 +160,11 @@
             <div class="modal__frameR">
 
                 <div class="productbuy">
+                    <img class="counterPcont" src="/images/number.png" alt="">
+
+                    <div class="writeCount">
+                        
+                    </div>
 
                     <img class="imgPB" src="{{product.image}}" alt="">
                     <a class="name" href="/product/{{product._id}}/{{product.danger}}">{{product.name}}</a>
@@ -178,6 +183,7 @@
     </div>
 
 
+    <script src="/scripts/storerage.js"></script>
     <script src="/scripts/checkout.js"></script>
     <script src="/scripts/cart.js"></script>
 </body>

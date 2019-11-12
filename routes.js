@@ -112,6 +112,14 @@ function createRoutes(app, db) {
         response.send(cartList);
     });
 
+    app.delete('/api/cart/deleteall', (request, response) => {
+
+        cartList = [];
+       
+        response.send(cartList);
+    });
+
+
 
     app.get('/product/:id/:danger', function (req, res) {
         var id = req.params.id;

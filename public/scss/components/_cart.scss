@@ -36,7 +36,24 @@ $colorrose: #ff1f50;
       flex-direction: row;
       justify-content: center;
 
-      .buttonCart {
+      .buttonCartC {
+        color: $colorwhite;
+        background: $colorrose;
+        border: none;
+        font-family: fr-bold;
+        border-radius: 15px;
+        font-size: 30px;
+        transition: all 0.5s ease;
+        margin-top: 15px;
+        padding-right: 50px;
+        padding-left: 50px;
+        text-shadow: -5px 5px 4px rgba(0, 0, 0, 0.5);
+        &:hover {
+          transform: scale(0.9);
+          text-shadow: -1px 1px 4px rgba(0, 0, 0, 0.8);
+        }
+      }
+      .buttonCartB {
         color: $colorwhite;
         background: $colorrose;
         border: none;
@@ -83,7 +100,7 @@ $colorrose: #ff1f50;
       grid-template-columns: auto auto auto;
       align-items: start;
       justify-items: center;
-
+      
       @import "productsAdd";
       overflow: auto;
       &::-webkit-scrollbar {
