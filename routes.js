@@ -107,15 +107,12 @@ function createRoutes(app, db) {
                 i = cartList.length;
             }
         }
-      
 
-        response.send(cartList);
-    });
-
-    app.delete('/api/cart/deleteall', (request, response) => {
-
-        cartList = [];
+        if(id === "deleteall"){
+            cartList = [];
+        }
        
+
         response.send(cartList);
     });
 

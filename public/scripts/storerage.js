@@ -4,8 +4,10 @@ class Store {
     this.products = [];
     this.renderAddBtn = document.querySelectorAll(".btnaddg");
     this.renderCountCart = document.querySelector(".carshop__lenght");
+    this.priceData = document.querySelector("#priceView");
     this.configStore();
     this.getAllProducts();
+    this.totalPrice = 0;
   }
 
   configStore() {
@@ -66,29 +68,33 @@ class Store {
     this.removeAllServer();
     this.products = [];
     this.update();
-    
+
   }
 
-  removeAllServer(){
+  removeAllServer() {
     var promise = fetch("/api/cart/deleteall", {
-        method: "DELETE"
+      method: "DELETE"
+    });
+
+    promise
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        console.log(data);
+
       });
-  
-      promise
-        .then(function(response) {
-          return response.json();
-        })
-        .then(function(data) {
-          console.log(data);
-          
-        });
   }
 
   update() {
     var duplicateProducts = [];
     this.renderCountCart.innerHTML = this.products.length;
     this.renderStorage.innerHTML = "";
+    this.totalPrice = 0;
     this.products.forEach(product => {
+
+      this.totalPrice += product.price;
+
       let found = false;
       duplicateProducts.forEach(duplicateProduct => {
         if (duplicateProduct.name == product.name) {
@@ -106,6 +112,14 @@ class Store {
     duplicateProducts.forEach(duplicateProduct => {
       this.renderStorage.appendChild(duplicateProduct.render());
     });
+    this.actualizarPriceTotal();
+  
+  }
+
+  actualizarPriceTotal() {
+    if (this.priceData != null) {
+      this.priceData.innerHTML = this.totalPrice;
+    }
   }
 
   addProductServer(id, load) {
@@ -114,10 +128,10 @@ class Store {
     });
 
     promise
-      .then(function(response) {
+      .then(function (response) {
         return response.json();
       })
-      .then(function(product) {
+      .then(function (product) {
         console.log(product);
 
         if (load) {
@@ -133,10 +147,10 @@ class Store {
     });
 
     promise
-      .then(function(response) {
+      .then(function (response) {
         return response.json();
       })
-      .then(function(data) {
+      .then(function (data) {
         console.log(data);
         console.log(data.cartList);
         if (load) {
@@ -151,10 +165,10 @@ class Store {
     });
 
     promise
-      .then(function(response) {
+      .then(function (response) {
         return response.json();
       })
-      .then(function(products) {
+      .then(function (products) {
         if (load) {
           load(products);
         }
