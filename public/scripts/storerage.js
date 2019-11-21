@@ -10,6 +10,20 @@ class Store {
     this.totalPrice = 0;
   }
 
+
+
+  getRef(name) {
+    let ref = undefined;
+    for (let i = 0; i < this.products.length; i++) {
+      let producto = this.products[i];
+      if (producto.name == name) {
+        ref = producto;
+        i = this.products.length;
+      }
+    }
+    return ref;
+  }
+  
   configStore() {
     if (this.renderAddBtn != null) {
       this.renderAddBtn.forEach(btn => {
@@ -118,7 +132,7 @@ class Store {
 
   actualizarPriceTotal() {
     if (this.priceData != null) {
-      this.priceData.innerHTML = this.totalPrice;
+      this.priceData.innerHTML =`TOTAL:   $${this.totalPrice}` ;
     }
   }
 

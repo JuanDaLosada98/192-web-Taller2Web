@@ -29,45 +29,58 @@ $colorrose: #ff1f50;
     background-position-x: center;
     background-position-y: 37%;
 
-    .containerButtons {
+    .containerBtnT {
       width: 100%;
-
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       justify-content: center;
-
-      .buttonCartC {
+      #priceView{
         color: $colorwhite;
-        background: $colorrose;
-        border: none;
         font-family: fr-bold;
-        border-radius: 15px;
-        font-size: 30px;
-        transition: all 0.5s ease;
-        margin-top: 15px;
-        padding-right: 50px;
-        padding-left: 50px;
+        font-size: 20px;
         text-shadow: -5px 5px 4px rgba(0, 0, 0, 0.5);
-        &:hover {
-          transform: scale(0.9);
-          text-shadow: -1px 1px 4px rgba(0, 0, 0, 0.8);
-        }
+        margin: 0;
+        align-self: flex-end;
+        margin-top: 15px;
       }
-      .buttonCartB {
-        color: $colorwhite;
-        background: $colorrose;
-        border: none;
-        font-family: fr-bold;
-        border-radius: 15px;
-        font-size: 30px;
-        transition: all 0.5s ease;
-        margin-top: 15px;
-        padding-right: 50px;
-        padding-left: 50px;
-        text-shadow: -5px 5px 4px rgba(0, 0, 0, 0.5);
-        &:hover {
-          transform: scale(0.9);
-          text-shadow: -1px 1px 4px rgba(0, 0, 0, 0.8);
+      .containerButtons {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        .buttonCartC {
+          color: $colorwhite;
+          background: $colorrose;
+          border: none;
+          font-family: fr-bold;
+          border-radius: 15px;
+          font-size: 30px;
+          transition: all 0.5s ease;
+          margin-top: 15px;
+          padding-right: 50px;
+          padding-left: 50px;
+          text-shadow: -5px 5px 4px rgba(0, 0, 0, 0.5);
+          &:hover {
+            transform: scale(0.9);
+            text-shadow: -1px 1px 4px rgba(0, 0, 0, 0.8);
+          }
+        }
+        .buttonCartB {
+          color: $colorwhite;
+          background: $colorrose;
+          border: none;
+          font-family: fr-bold;
+          border-radius: 15px;
+          font-size: 30px;
+          transition: all 0.5s ease;
+          margin-top: 15px;
+          padding-right: 50px;
+          padding-left: 50px;
+          text-shadow: -5px 5px 4px rgba(0, 0, 0, 0.5);
+          &:hover {
+            transform: scale(0.9);
+            text-shadow: -1px 1px 4px rgba(0, 0, 0, 0.8);
+          }
         }
       }
     }
@@ -91,16 +104,15 @@ $colorrose: #ff1f50;
       color: $colorrose;
       top: 23px;
       transform: translateX(-1px);
-      
     }
     .productsAddedC {
       width: 100%;
-      height: 70%;
+      height: 65%;
       display: grid;
       grid-template-columns: auto auto auto;
       align-items: start;
       justify-items: center;
-      
+
       @import "productsAdd";
       overflow: auto;
       &::-webkit-scrollbar {
@@ -145,6 +157,9 @@ $colorrose: #ff1f50;
   }
   .listCartR--active {
     transform: translate(0%, 0%);
+  }
+  .listCartR--close {
+    transform: translate(100%, 0%);
   }
 }
 .carshop {

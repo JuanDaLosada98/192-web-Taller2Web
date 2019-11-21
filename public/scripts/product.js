@@ -1,18 +1,19 @@
-window.addEventListener("load", function () {
+window.addEventListener("load", function() {
   var addBtnVP = document.querySelectorAll(".btnAddBuy__AddText");
   var btnAddBuyB = document.querySelector(".btnAddBuy__Buy");
   var priceData = document.querySelector("#priceData");
   var quantityslice = this.document.querySelector(".quantityslice");
   var containerCount = document.querySelector(".writeCount");
+  var containerT = document.querySelector(".totalPiceM");
 
-  addBtnVP.forEach(function (btn) {
-    btn.addEventListener("click", function (event) {
+  addBtnVP.forEach(function(btn) {
+    btn.addEventListener("click", function(event) {
       event.preventDefault();
       var id = btn.getAttribute("data-name");
 
       let index = quantityslice.value;
-      
-      console.log("clickA")
+
+      console.log("clickA");
       for (let i = 0; i < index; i++) {
         store.addProducts(id);
       }
@@ -20,22 +21,26 @@ window.addEventListener("load", function () {
   });
 
   var element = document.createElement("div");
+  var element2 = document.createElement("div");
   containerCount.appendChild(element);
-  
-  btnAddBuyB.addEventListener("click",  (event) => {
+  containerT.appendChild(element2);
+
+  btnAddBuyB.addEventListener("click", event => {
     event.preventDefault();
     var id = btn.getAttribute("data-name");
 
     let index = quantityslice.value;
-    console.log("click")
+    console.log("click");
     element.classList.add("countContainer");
+    element2.classList.add("tContainer");
 
     element.innerHTML = `
-        <h1 class="count" style="z-index:999;">${index}</h1>
-        <h1> $${index*parseInt(priceData.innerHTML.replace("$", ""))} <h1>
+        <p class="count" style="z-index:999;">${index}</p>
         `;
 
-
+    element2.innerHTML = `
+        <p class="totalM" >TOTAL: $${index * parseInt(priceData.innerHTML.replace("$", ""))} </p>
+        `;
   });
 });
 
