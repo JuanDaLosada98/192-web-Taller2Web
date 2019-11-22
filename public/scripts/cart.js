@@ -2,8 +2,25 @@ var btn = document.querySelector(".carshop");
 var list = document.querySelector(".listCartR");
 var renderProductsCart = document.querySelector(".buttonCartB");
 var productsBAdded = document.querySelector(".productsBAdded");
+var btnAddBuy__buyFrame = document.querySelector("#areProducts");
 
 var products = [];
+
+function handleAreProducts() {
+  console.log("Hay productos?");
+  if (products.length == 0) {
+    alert("You don't have any product to buy");
+  }
+}
+btnAddBuy__buyFrame.addEventListener("click", handleAreProducts);
+
+var clear = document.querySelector(".buttonCartC");
+
+clear.addEventListener("click", function(event) {
+  event.preventDefault();
+  store.deleteAll();
+  products = [];
+});
 
 function handleClick() {
   list.classList.toggle("listCartR--active");
@@ -12,35 +29,66 @@ function handleClick() {
 
 btn.addEventListener("click", handleClick);
 
-products = store.products;
-
 function handleDrawAddedP() {
+  console.log(products.length);
   console.log(products);
+  products = store.products;
+  var duplicateProducts = [];
+
   productsBAdded.innerHTML = "";
+
   products.forEach(p => {
-    var element = document.createElement("div");
-    element.classList.add("generalproductAdd");
-    element.innerHTML = `
-        <div class="btndeleteP"><a class="btndeleteP__link" data-name="${p.id}"><img class="imgbtndelete"
-        src="/images/add.png" alt=""></a>
-        </div>
-        
-        <img class="counterPcont" src="/images/number.png" alt="">
-        <h1 class="count" style="z-index:999;">${p.cont}</h1>
-        
-        
-        <a href="/product/${p.id}/${p.danger}"> <img class="imgProductAdd" src="${p.image}" alt=""></a>
-        
-        <a class="name" href="/product/${p.id}/${p.danger}">${p.name}</a>
-        <p class="pricePadd">$${p.price}</p>`;
-
-    productsBAdded.appendChild(element);
-
-    var btn__delete = document.querySelector(".btndeleteP__link");
-    btn__delete.addEventListener("click", () => {
-      console.log("entro");  
-      store.delete(store.getRef(p.id));
+    let found = false;
+    duplicateProducts.forEach(duplicateProduct => {
+      if (duplicateProduct.name == p.name) {
+        found = true;
+      }
     });
+    if (!found) {
+      duplicateProducts.push(p);
+      var element = document.createElement("div");
+      element.classList.add("generalproductAdd");
+      productsBAdded.appendChild(element);
+      element.innerHTML = `
+          <div class="btndeleteP"><a class="btndeleteP__btn" data-name="${p.id}"><img class="imgbtndelete"
+          src="/images/add.png" alt=""></a>
+          </div>
+          
+          <img class="counterPcont" src="/images/number.png" alt="">
+          <p class="count" style="z-index:999;">${p.cont}</p>
+          
+          
+          <a href="/product/${p.id}/${p.danger}"> <img class="imgProductAdd" src="${p.image}" alt=""></a>
+          
+          <a class="name" href="/product/${p.id}/${p.danger}">${p.name}</a>
+          <p class="pricePadd">$${p.price}</p>`;
+
+      var deleteBtn = element.querySelector(".btndeleteP__btn");
+      deleteBtn.addEventListener("click", () => {
+        console.log("entro");
+        
+        
+        store.delete(p);
+        productsBAdded.removeChild(element);
+        console.log(products.length);
+
+        
+      });
+    }
+
+    if (products.length == 0) {
+      var element = document.createElement("div");
+      element.classList.add("noProductsToBuy");
+      productsBAdded.appendChild(element);
+
+      element.innerHTML = `
+
+      <div class="noProductsToBuy__cont">
+          <p class="noProductsToBuy__text" ">*YOU DON'T HAVE ANY PRODUCT</p>
+      </div>
+      
+      `;
+    }
   });
 }
 

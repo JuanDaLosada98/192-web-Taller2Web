@@ -5,6 +5,7 @@ class Store {
     this.renderAddBtn = document.querySelectorAll(".btnaddg");
     this.renderCountCart = document.querySelector(".carshop__lenght");
     this.priceData = document.querySelector("#priceView");
+    this.priceDataBuy = document.querySelector("#priceViewB");
     this.configStore();
     this.getAllProducts();
     this.totalPrice = 0;
@@ -78,7 +79,7 @@ class Store {
     });
   }
 
-  deleteAll(products) {
+  deleteAll() {
     this.removeAllServer();
     this.products = [];
     this.update();
@@ -133,6 +134,10 @@ class Store {
   actualizarPriceTotal() {
     if (this.priceData != null) {
       this.priceData.innerHTML =`TOTAL:   $${this.totalPrice}` ;
+      
+    }
+    if (this.priceDataBuy != null) {
+      this.priceDataBuy.innerHTML =`TOTAL:   $${this.totalPrice}` ;
     }
   }
 

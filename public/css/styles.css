@@ -2811,6 +2811,35 @@ input[type="range"]:focus::-ms-fill-upper {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center; }
+    .modal__frame .modal__frameRBA--active .titleCont {
+      width: 100%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; }
+      .modal__frame .modal__frameRBA--active .titleCont .titleCont__text {
+        font-family: fr-bold;
+        color: white;
+        font-size: 30px; }
+    .modal__frame .modal__frameRBA--active #priceViewB {
+      color: white;
+      font-family: fr-bold;
+      font-size: 20px;
+      text-shadow: -5px 5px 4px rgba(0, 0, 0, 0.5);
+      margin: 0;
+      -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+      margin-top: 15px; }
     .modal__frame .modal__frameRBA--active .productsBAdded {
       width: 100%;
       height: 65%;
@@ -2818,10 +2847,15 @@ input[type="range"]:focus::-ms-fill-upper {
       display: grid;
       -ms-grid-columns: auto;
       grid-template-columns: auto;
-      -webkit-box-align: start;
-      -ms-flex-align: start;
-      align-items: start;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
       justify-items: center;
+      background-image: url(/images/logo.png);
+      background-size: 50%;
+      background-repeat: no-repeat;
+      background-position-x: center;
+      background-position-y: 37%;
       overflow: auto; }
       .modal__frame .modal__frameRBA--active .productsBAdded .generalproductAdd {
         position: relative;
@@ -2852,7 +2886,7 @@ input[type="range"]:focus::-ms-fill-upper {
           -webkit-transform: scale(0.9);
           -ms-transform: scale(0.9);
           transform: scale(0.9); }
-          .modal__frame .modal__frameRBA--active .productsBAdded .generalproductAdd:hover .btndeleteP__link {
+          .modal__frame .modal__frameRBA--active .productsBAdded .generalproductAdd:hover .btndeleteP__btn {
             -webkit-transform: translateY(-20px);
             -ms-transform: translateY(-20px);
             transform: translateY(-20px); }
@@ -2866,6 +2900,15 @@ input[type="range"]:focus::-ms-fill-upper {
           -webkit-transform: scale(0.8);
           -ms-transform: scale(0.8);
           transform: scale(0.8); }
+        .modal__frame .modal__frameRBA--active .productsBAdded .generalproductAdd .count {
+          position: absolute;
+          font-family: fr-bold;
+          color: #ff1f50;
+          font-size: 16px;
+          top: 21px;
+          -webkit-transform: translateX(-1px);
+          -ms-transform: translateX(-1px);
+          transform: translateX(-1px); }
         .modal__frame .modal__frameRBA--active .productsBAdded .generalproductAdd .pricePadd {
           -webkit-transition: all 0.5s ease;
           -o-transition: all 0.5s ease;
@@ -2897,7 +2940,7 @@ input[type="range"]:focus::-ms-fill-upper {
           -webkit-transition: all 0.5s ease;
           -o-transition: all 0.5s ease;
           transition: all 0.5s ease; }
-        .modal__frame .modal__frameRBA--active .productsBAdded .generalproductAdd .btndeleteP__link {
+        .modal__frame .modal__frameRBA--active .productsBAdded .generalproductAdd .btndeleteP__btn {
           position: relative;
           width: 45px;
           height: 44px;

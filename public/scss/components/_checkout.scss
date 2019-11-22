@@ -125,23 +125,51 @@ $colorrose: #ff1f50;
       }
     }
   }
-  .modal__frameRBA{
+
+  .modal__frameRBA {
     display: none;
-    
   }
-  .modal__frameRBA--active{
+  .modal__frameRBA--active {
     width: 30%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    .titleCont {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .titleCont__text {
+        font-family: fr-bold;
+        color: $colorwhite;
+        font-size: 30px;
+      }
+    }
+    
+    #priceViewB{
+      color: $colorwhite;
+      font-family: fr-bold;
+      font-size: 20px;
+      text-shadow: -5px 5px 4px rgba(0, 0, 0, 0.5);
+      margin: 0;
+      align-self: center;
+      margin-top: 15px;
+    }
     .productsBAdded {
       width: 100%;
       height: 65%;
       display: grid;
       grid-template-columns: auto;
-      align-items: start;
+      align-items: center;
       justify-items: center;
+      background-image: url(/images/logo.png);
+    
+      background-size: 50%;
+      background-repeat: no-repeat;
+      background-position-x: center;
+      background-position-y: 37%;
 
       .generalproductAdd {
         position: relative;
@@ -159,10 +187,10 @@ $colorrose: #ff1f50;
         transition: all 0.5s ease;
         &:hover {
           transform: scale(0.9);
-          .btndeleteP__link {
+          .btndeleteP__btn {
             transform: translateY(-20px);
           }
-      
+
           .btndeleteP {
             padding-bottom: 60px;
           }
@@ -173,13 +201,15 @@ $colorrose: #ff1f50;
           height: 44px;
           z-index: 2;
           transform: scale(0.8);
-          
-          
-          
-          
-          
         }
-       
+        .count {
+          position: absolute;
+          font-family: fr-bold;
+          color: $colorrose;
+          font-size: 16px;
+          top: 21px;
+          transform: translateX(-1px);
+        }
         .pricePadd {
           transition: all 0.5s ease;
           display: flex;
@@ -190,7 +220,7 @@ $colorrose: #ff1f50;
           opacity: 1;
           margin: 0;
         }
-      
+
         .btndeleteP {
           position: absolute;
           display: flex;
@@ -198,11 +228,9 @@ $colorrose: #ff1f50;
           justify-content: flex-end;
           align-items: flex-end;
           transition: all 0.5s ease;
-          
         }
-        
-      
-        .btndeleteP__link {
+
+        .btndeleteP__btn {
           position: relative;
           width: 45px;
           height: 44px;
@@ -239,7 +267,7 @@ $colorrose: #ff1f50;
           }
         }
       }
-      
+
       overflow: auto;
       &::-webkit-scrollbar {
         display: none;
@@ -261,7 +289,6 @@ $colorrose: #ff1f50;
       color: $colorrose;
       font-family: fr-bold;
       font-size: 15px;
-    
     }
     .totalPiceM {
       margin-top: 20px;
@@ -390,7 +417,7 @@ $colorrose: #ff1f50;
       }
     }
   }
-  .modal__frameR--active{
+  .modal__frameR--active {
     display: none;
   }
 }
