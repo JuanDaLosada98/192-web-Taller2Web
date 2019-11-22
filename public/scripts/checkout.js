@@ -6,6 +6,8 @@ window.addEventListener("load", function() {
   var modal__frameR = document.querySelector(".modal__frameR");
   var listCart = document.querySelector(".listCartR");
 
+
+
   var wrapper = document.querySelector(".wrapperP");
   var carshop = document.querySelector(".carshop");
   function handleOpenModal() {
@@ -13,6 +15,8 @@ window.addEventListener("load", function() {
     carshop.classList.add("carshop--active");
     document.body.classList.add("noscroll");
     modal.classList.add("modal--active");
+
+
     setTimeout(function() {
       modal.classList.add("modal--show");
     }, 100);
