@@ -66,13 +66,17 @@ function handleDrawAddedP() {
       var deleteBtn = element.querySelector(".btndeleteP__btn");
       deleteBtn.addEventListener("click", () => {
         console.log("entro");
-        
-        
+
         store.delete(p);
         productsBAdded.removeChild(element);
-        console.log(products.length);
-
-        
+        console.log(products.length);  
+       
+        /*
+          store.delete(p);
+          productsBAdded.removeChild(element);
+          console.log(products.length);  
+        */
+      
       });
     }
 
