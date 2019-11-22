@@ -4,11 +4,14 @@ var renderProductsCart = document.querySelector(".buttonCartB");
 var productsBAdded = document.querySelector(".productsBAdded");
 var btnAddBuy__buyFrame = document.querySelector("#areProducts");
 
+
+
 var products = [];
 
 function handleAreProducts() {
-  console.log("Hay productos?");
+  
   if (products.length == 0) {
+    console.log("Hay productos?");
     alert("You don't have any product to buy");
   }
 }
@@ -80,19 +83,7 @@ function handleDrawAddedP() {
       });
     }
 
-    if (products.length == 0) {
-      var element = document.createElement("div");
-      element.classList.add("noProductsToBuy");
-      productsBAdded.appendChild(element);
-
-      element.innerHTML = `
-
-      <div class="noProductsToBuy__cont">
-          <p class="noProductsToBuy__text" ">*YOU DON'T HAVE ANY PRODUCT</p>
-      </div>
-      
-      `;
-    }
+    
   });
 }
 
