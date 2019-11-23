@@ -112,12 +112,14 @@ $colorrose: #ff1f50;
       grid-template-columns: auto auto auto;
       align-items: start;
       justify-items: center;
+      
 
       @import "productsAdd";
       overflow: auto;
       &::-webkit-scrollbar {
         display: none;
       }
+      
     }
 
     .carshop {

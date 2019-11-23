@@ -186,6 +186,9 @@ $colorrose: #ff1f50;
         margin-bottom: 20px;
         box-shadow: -10px 10px 4px rgba(0, 0, 0, 0.25);
         transition: all 0.5s ease;
+
+
+
         &:hover {
           transform: scale(0.9);
           .btndeleteP__btn {
@@ -441,4 +444,15 @@ $colorrose: #ff1f50;
   position: absolute;
   top: 260px;
   left: 100px;
+}
+
+.modal__frame{
+  .generalproductAdd{
+    .btndeleteP{
+      bottom: 10px;
+      right: 10px;
+    }
+    
+            }
+
 }

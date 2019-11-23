@@ -25,24 +25,28 @@ window.addEventListener("load", function() {
   containerCount.appendChild(element);
   containerT.appendChild(element2);
 
-  btnAddBuyB.addEventListener("click", event => {
-    event.preventDefault();
-    var id = btn.getAttribute("data-name");
+  if(btnAddBuyB){
 
-    let index = quantityslice.value;
-    console.log("click");
-    element.classList.add("countContainer");
-    element2.classList.add("tContainer");
-
-    element.innerHTML = `
-        <p class="count" style="z-index:999;">${index}</p>
-        `;
-
-    element2.innerHTML = `
-        <p class="totalM" >TOTAL: $${index * parseInt(priceData.innerHTML.replace("$", ""))} </p>
-        `;
-  });
+    btnAddBuyB.addEventListener("click", event => {
+      event.preventDefault();
+      var id = btn.getAttribute("data-name");
+  
+      let index = quantityslice.value;
+      console.log("click");
+      element.classList.add("countContainer");
+      element2.classList.add("tContainer");
+  
+      element.innerHTML = `
+          <p class="count" style="z-index:999;">${index}</p>
+          `;
+  
+      element2.innerHTML = `
+          <p class="totalM" >TOTAL: $${index * parseInt(priceData.innerHTML.replace("$", ""))} </p>
+          `;
+    });
+  }
 });
+
 
 //-----------------------------------------------------
 /**

@@ -1,31 +1,30 @@
-var productsGlobal = [];
-
 class Store {
   constructor() {
-    this.rederizando = false;
-    this.priceDataBuy = document.querySelector("#priceViewB");
     this.renderStorage = document.querySelector(".productsAddedC");
+    this.products = [];
     this.renderAddBtn = document.querySelectorAll(".btnaddg");
-    this.configStore();
-
-    this.getAllProducts();
     this.renderCountCart = document.querySelector(".carshop__lenght");
     this.priceData = document.querySelector("#priceView");
-
+    this.priceDataBuy = document.querySelector("#priceViewB");
+    this.configStore();
+    this.getAllProducts();
     this.totalPrice = 0;
-
-    this.observer = undefined;
-    this.observerB = undefined;
   }
 
-  createObserver(url) {
-    this.observer = document.querySelector(url);
-  }
 
-  createObserverB(url) {
-    this.observerB = document.querySelector(url);
-  }
 
+  getRef(name) {
+    let ref = undefined;
+    for (let i = 0; i < this.products.length; i++) {
+      let producto = this.products[i];
+      if (producto.name == name) {
+        ref = producto;
+        i = this.products.length;
+      }
+    }
+    return ref;
+  }
+  
   configStore() {
     if (this.renderAddBtn != null) {
       this.renderAddBtn.forEach(btn => {
@@ -50,7 +49,7 @@ class Store {
           p.danger,
           this
         );
-        productsGlobal.push(product);
+        this.products.push(product);
       });
       this.update();
     });
@@ -66,7 +65,7 @@ class Store {
         p.danger,
         this
       );
-      productsGlobal.push(product);
+      this.products.push(product);
 
       this.update();
     });
@@ -74,28 +73,17 @@ class Store {
 
   delete(product) {
     this.removeProductServer(product, () => {
-      var index = productsGlobal.indexOf(product);
-      productsGlobal.splice(index, 1);
+      var index = this.products.indexOf(product);
+      this.products.splice(index, 1);
       this.update();
     });
   }
 
-  getRef(name) {
-    let ref = undefined;
-    for (let i = 0; i < productsGlobal.length; i++) {
-      let producto = productsGlobal[i];
-      if (producto.name == name) {
-        ref = producto;
-        i = productsGlobal.length;
-      }
-    }
-    return ref;
-  }
-
-  deleteAll(products) {
+  deleteAll() {
     this.removeAllServer();
-    productsGlobal = [];
+    this.products = [];
     this.update();
+
   }
 
   removeAllServer() {
@@ -104,26 +92,22 @@ class Store {
     });
 
     promise
-      .then(function(response) {
+      .then(function (response) {
         return response.json();
       })
-      .then(function(data) {
+      .then(function (data) {
         console.log(data);
+
       });
   }
 
   update() {
     var duplicateProducts = [];
-    this.renderCountCart.innerHTML = productsGlobal.length;
+    this.renderCountCart.innerHTML = this.products.length;
     this.renderStorage.innerHTML = "";
-    if (this.observer) {
-      this.observer.innerHTML = "";
-    }
-    if (this.observerB) {
-      this.observerB.innerHTML = "";
-    }
     this.totalPrice = 0;
-    productsGlobal.forEach(product => {
+    this.products.forEach(product => {
+
       this.totalPrice += product.price;
 
       let found = false;
@@ -142,62 +126,18 @@ class Store {
 
     duplicateProducts.forEach(duplicateProduct => {
       this.renderStorage.appendChild(duplicateProduct.render());
-      if (this.observer) {
-        this.observer.appendChild(duplicateProduct.createNewView());
-      }
-      if (this.observerB) {
-        this.observerB.appendChild(duplicateProduct.createNewViewB());
-      }
     });
     this.actualizarPriceTotal();
+  
   }
-  /*
-  update() {
-   
-    var duplicateProducts = [];
-    this.renderCountCart.innerHTML = productsGlobal.length;
-    this.renderStorage.innerHTML = "";
 
-    this.totalPrice = 0;
-    productsGlobal.forEach(product => {
-      this.totalPrice += product.price;
-
-      let found = false;
-      duplicateProducts.forEach(duplicateProduct => {
-        if (duplicateProduct.name == product.name) {
-          duplicateProduct.cont += 1;
-          duplicateProduct.setCount(duplicateProduct.cont);
-          found = true;
-        }
-      });
-      if (!found) {
-        product.setCount(1);
-        duplicateProducts.push(product);
-      }
-    });
-
-    
-
-    duplicateProducts.forEach(duplicateProduct => {
-      this.renderStorage.appendChild(duplicateProduct.render());
-
-      if (this.observer) {
-       this.observer.appendChild(duplicateProduct.createNewView());
-      }
-    });
-
-    console.log(duplicateProducts);
-
-    this.actualizarPriceTotal();
-  }
-*/
   actualizarPriceTotal() {
     if (this.priceData != null) {
-      this.priceData.innerHTML = `TOTAL:   $${this.totalPrice}`;
+      this.priceData.innerHTML =`TOTAL:   $${this.totalPrice}` ;
+      
     }
-
     if (this.priceDataBuy != null) {
-      this.priceDataBuy.innerHTML = `TOTAL:   $${this.totalPrice}`;
+      this.priceDataBuy.innerHTML =`TOTAL:   $${this.totalPrice}` ;
     }
   }
 
@@ -207,10 +147,10 @@ class Store {
     });
 
     promise
-      .then(function(response) {
+      .then(function (response) {
         return response.json();
       })
-      .then(function(product) {
+      .then(function (product) {
         console.log(product);
 
         if (load) {
@@ -226,10 +166,10 @@ class Store {
     });
 
     promise
-      .then(function(response) {
+      .then(function (response) {
         return response.json();
       })
-      .then(function(data) {
+      .then(function (data) {
         console.log(data);
         console.log(data.cartList);
         if (load) {
@@ -244,10 +184,10 @@ class Store {
     });
 
     promise
-      .then(function(response) {
+      .then(function (response) {
         return response.json();
       })
-      .then(function(products) {
+      .then(function (products) {
         if (load) {
           load(products);
         }
@@ -292,50 +232,6 @@ class Product {
 
     this.renderCont = this.element.querySelector(".count");
     this.renderCont.innerHTML = this.cont;
-  }
-
-  createNewView() {
-    var elementoNew = document.createElement("div");
-    elementoNew.classList.add("generalproductAdd");
-    elementoNew.innerHTML = `
-        <div class="btndeleteP"><a class="btndeleteP__link" data-name="${this.id}"><img class="imgbtndelete"
-        src="/images/add.png" alt=""></a>
-        </div>
-        
-        <img class="counterPcont" src="/images/number.png" alt="">
-        <h1 class="count" style="z-index:999;">${this.cont}</h1>
-        
-        
-        <a href="/product/${this.id}/${this.danger}"> <img class="imgProductAdd" src="${this.image}" alt=""></a>
-        
-        <a class="name" href="/product/${this.id}/${this.danger}">${this.name}</a>
-        <p class="pricePadd">$${this.price}</p>`;
-
-    var btn__delete = elementoNew.querySelector(".btndeleteP__link");
-    btn__delete.addEventListener("click", () => {
-      this.delete();
-    });
-
-    return elementoNew;
-  }
-
-  createNewViewB() {
-    var elementoNew = document.createElement("div");
-    elementoNew.classList.add("generalproductAdd");
-    elementoNew.innerHTML = `
-      
-        <img class="counterPcont" src="/images/number.png" alt="">
-        <h1 class="count" style="z-index:999;">${this.cont}</h1>
-        
-        
-        <a href="/product/${this.id}/${this.danger}"> <img class="imgProductAdd" src="${this.image}" alt=""></a>
-        
-        <a class="name" href="/product/${this.id}/${this.danger}">${this.name}</a>
-        <p class="pricePadd">$${this.price}</p>`;
-
-  
-
-    return elementoNew;
   }
 
   setCount(number) {
