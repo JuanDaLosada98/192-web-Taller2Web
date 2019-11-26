@@ -1,4 +1,25 @@
 var productsGlobal = [];
+var menuResponsive = document.querySelector(".Hmenu");
+var mainNav = document.querySelector(".mainnav");
+var btnRespon = document.querySelector(".nav-responsive__logo");
+var overflow = document.querySelector(".bodyOverflow");
+var wrap = document.querySelector(".layer");
+
+
+function handleOpenResponsive(){
+  mainNav.classList.toggle("mainnav--active");
+  btnRespon.classList.toggle("nav-responsive__logo--active");
+  overflow.classList.toggle("bodyOverflow--active");
+  wrap.classList.toggle("layer--active");
+
+
+}
+
+
+menuResponsive.addEventListener("click", handleOpenResponsive);
+
+
+
 
 class Store {
   constructor() {

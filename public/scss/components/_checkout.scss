@@ -104,7 +104,6 @@ $colorrose: #ff1f50;
           padding: 10px;
           border: none;
           border-radius: 15px;
-         
         }
       }
 
@@ -146,10 +145,13 @@ $colorrose: #ff1f50;
         font-family: fr-bold;
         color: $colorwhite;
         font-size: 30px;
+        text-align: center;
+        margin-right: 10px;
+        margin-left: 10px;
       }
     }
-    
-    #priceViewB{
+
+    #priceViewB {
       color: $colorwhite;
       font-family: fr-bold;
       font-size: 20px;
@@ -166,7 +168,7 @@ $colorrose: #ff1f50;
       align-items: center;
       justify-items: center;
       background-image: url(/images/logo.png);
-    
+
       background-size: 50%;
       background-repeat: no-repeat;
       background-position-x: center;
@@ -187,17 +189,13 @@ $colorrose: #ff1f50;
         box-shadow: -10px 10px 4px rgba(0, 0, 0, 0.25);
         transition: all 0.5s ease;
 
-
-
         &:hover {
           transform: scale(0.9);
           .btndeleteP__btn {
             transform: translateY(-20px);
           }
 
-          .btndeleteP {
-            padding-bottom: 60px;
-          }
+         
         }
         .counterPcont {
           position: absolute;
@@ -446,13 +444,18 @@ $colorrose: #ff1f50;
   left: 100px;
 }
 
-.modal__frame{
-  .generalproductAdd{
-    .btndeleteP{
-      bottom: 10px;
-      right: 10px;
+.modal__frame {
+  .generalproductAdd {
+    &:hover {
+      .btndeleteP {
+        transform: translateY(-20px);
+        
+      }
     }
-    
-            }
-
+    .btndeleteP {
+      bottom: 70px;
+      right: 1px;
+      cursor: pointer;
+    }
+  }
 }

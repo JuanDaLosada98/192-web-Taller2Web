@@ -47,7 +47,7 @@ $colorrose: #ff1f50;
         width: 100%;
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content: space-evenly;
         .buttonCartC {
           color: $colorwhite;
           background: $colorrose;
@@ -57,8 +57,7 @@ $colorrose: #ff1f50;
           font-size: 30px;
           transition: all 0.5s ease;
           margin-top: 15px;
-          padding-right: 50px;
-          padding-left: 50px;
+         
           text-shadow: -5px 5px 4px rgba(0, 0, 0, 0.5);
           &:hover {
             transform: scale(0.9);
@@ -74,8 +73,7 @@ $colorrose: #ff1f50;
           font-size: 30px;
           transition: all 0.5s ease;
           margin-top: 15px;
-          padding-right: 50px;
-          padding-left: 50px;
+         
           text-shadow: -5px 5px 4px rgba(0, 0, 0, 0.5);
           &:hover {
             transform: scale(0.9);
