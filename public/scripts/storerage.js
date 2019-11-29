@@ -6,6 +6,49 @@ var overflow = document.querySelector(".bodyOverflow");
 var wrap = document.querySelector(".layer");
 
 
+
+function handleAreProducts() {
+ 
+  var fullname2 = document.getElementById("fullname2").value;
+  var idnumber2 = document.getElementById("idnumber2").value;
+  var direction2 = document.getElementById("direction2").value;
+  console.log(fullname2);
+  console.log(idnumber2);
+  var checked = false;
+  if(document.getElementById("r3").checked ||  document.getElementById("r4").checked ){
+    checked = true;
+  }
+  console.log(productsGlobal.length);
+  if (productsGlobal.length != 0 && idnumber2 != "" && fullname2 != "" && direction2 != "" && checked) {
+
+    console.log("Hay productos?");
+   
+     } else {
+       alert("Maybe you don't have any products added or you have some empty fields to cover");
+     }
+}
+areProducts2.addEventListener("click", handleAreProducts);
+
+function handleAreProducts2() {
+ 
+  var fullname = document.getElementById("fullname").value;
+  var idnumber = document.getElementById("idnumber").value;
+  var direction = document.getElementById("direction").value;
+  
+  var checked = false;
+  if(document.getElementById("r1").checked ||  document.getElementById("r2").checked ){
+    checked = true;
+  }
+  
+  if (idnumber != "" && fullname != "" && direction != "" && checked) {
+   
+     } else {
+       alert("Make sure you complete all empty spaces");
+     }
+}
+areProducts.addEventListener("click", handleAreProducts2);
+
+
 function handleOpenResponsive(){
   mainNav.classList.toggle("mainnav--active");
   btnRespon.classList.toggle("nav-responsive__logo--active");

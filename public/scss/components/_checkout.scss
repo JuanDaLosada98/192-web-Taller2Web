@@ -1,5 +1,76 @@
 $colorwhite: white;
 $colorrose: #ff1f50;
+
+.frameL__bottomBuyall {
+  display: none;
+}
+.frameL__bottomBuyall--active {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  align-content: space-around;
+  padding: 0 30px 0 30px;
+  margin-top: 10px;
+  .bottom__contain {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 0 10px 0;
+    .bottom__overt {
+      font-family: fr-bold;
+      color: $colorwhite;
+      font-size: 15px;
+    }
+  }
+
+  .bottom__input {
+    border-radius: 15px;
+    width: 60%;
+    font-family: fr-bold;
+    color: $colorrose;
+    font-size: 13px;
+    border: none;
+    padding: 15px;
+  }
+  .contain_confirmBtn {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    .confirmBtn {
+      width: 50%;
+      background: $colorwhite;
+      font-family: fr-bold;
+      color: $colorrose;
+      font-size: 25px;
+      padding: 10px;
+      border: none;
+      border-radius: 15px;
+    }
+  }
+
+  .frameL__bottomCheck {
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 10px;
+    label {
+      font-family: fr-bold;
+      color: $colorwhite;
+      font-size: 15px;
+      padding-right: 15px;
+      .check {
+        margin-left: 15px;
+      }
+    }
+  }
+}
 .modal {
   position: fixed;
   top: 0px;
@@ -25,7 +96,7 @@ $colorrose: #ff1f50;
 .modal__frame {
   position: fixed;
   width: 70%;
-  height: 60%;
+  height: 560px;
   background-color: rgba(0, 0, 0, 0.85);
   border-radius: 20px;
   display: flex;
@@ -124,6 +195,9 @@ $colorrose: #ff1f50;
         }
       }
     }
+    .frameL__bottom--close{
+      display: none;
+    }
   }
 
   .modal__frameRBA {
@@ -194,8 +268,6 @@ $colorrose: #ff1f50;
           .btndeleteP__btn {
             transform: translateY(-20px);
           }
-
-         
         }
         .counterPcont {
           position: absolute;
@@ -449,7 +521,6 @@ $colorrose: #ff1f50;
     &:hover {
       .btndeleteP {
         transform: translateY(-20px);
-        
       }
     }
     .btndeleteP {

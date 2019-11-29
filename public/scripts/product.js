@@ -25,28 +25,37 @@ window.addEventListener("load", function() {
   containerCount.appendChild(element);
   containerT.appendChild(element2);
 
-  if(btnAddBuyB){
-
+  if (btnAddBuyB) {
     btnAddBuyB.addEventListener("click", event => {
       event.preventDefault();
-      var id = btn.getAttribute("data-name");
-  
+      var id = btnAddBuyB.getAttribute("data-name");
+
       let index = quantityslice.value;
       console.log("click");
       element.classList.add("countContainer");
       element2.classList.add("tContainer");
-  
+
       element.innerHTML = `
           <p class="count" style="z-index:999;">${index}</p>
           `;
-  
+
       element2.innerHTML = `
-          <p class="totalM" >TOTAL: $${index * parseInt(priceData.innerHTML.replace("$", ""))} </p>
+          <p class="totalM" >TOTAL: $${index *
+            parseInt(priceData.innerHTML.replace("$", ""))} </p>
           `;
+
+      var promise = fetch("/addToSame/"+id+"/"+index, { method: "POST"});
+
+      promise
+        .then(function(response) {
+          return response.json();
+        })
+        .then(function(data) {
+          console.log(data);
+        });
     });
   }
 });
-
 
 //-----------------------------------------------------
 /**

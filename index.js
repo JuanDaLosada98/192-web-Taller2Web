@@ -18,6 +18,8 @@ const port = 5000;
 
 // importar mongo
 const MongoClient = require('mongodb').MongoClient;
+
+
 //si dice requiere no es algo que se daba pasar, dice igual a algo si se debe pasar porque es una instancia
 const assert = require('assert');
 
@@ -33,6 +35,9 @@ const dbName = 'store';
 // Create a new MongoClient
 const client = new MongoClient(url);
 
+
+
+/*
 //conectarse al cliente
 client.connect(function(err) {
     assert.equal(null, err);
@@ -48,11 +53,35 @@ client.connect(function(err) {
     createRoutes(app,db);
     
 });
+*/
+
+// Connect using MongoClient
+MongoClient.connect(
+   
+    "mongodb+srv://cluster0-g9dwn.mongodb.net/spaceshop",
+    
+    {
+      auth:{
+        user:"juanDlosada",
+        password:"eltrapoyelpan"
+      }
+    }
+    , function(err, client) {
+        const db = client.db(dbName);
+
+        const tipoDinosaurios = db.collection('products');
+        createRoutes(app,db);
+    
+  
+    app.listen(process.env.PORT || port);
+    //client.close();
+  });
 
 // definir una carpeta como pública
 app.use(express.static('public'));
 
-
+/*
 app.listen(port, () => {
     console.log(`Servidor iniciado en el puerto ${port}`);
 });
+*/
