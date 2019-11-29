@@ -10,7 +10,17 @@ var img = document.querySelector('.spacecenter__img');
 
 var range = document.querySelector('.input');
 var specifi = document.querySelector(".gunspecifi__descriptionimg");
-var specifibg = document.querySelector(".gunspecifi__bgimg")
+var specifibg = document.querySelector(".gunspecifi__bgimg");
+var interaction = document.querySelector(".note");
+var body = document.querySelector("body");
+
+
+function handleInteraction(){
+  body.classList.toggle("blockInteraction--active");
+}
+interaction.addEventListener("click", handleInteraction);
+
+
 
 
 var btnright = document.querySelector(".conteiner__nextimg");

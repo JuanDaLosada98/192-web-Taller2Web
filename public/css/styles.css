@@ -730,13 +730,16 @@ video {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   margin-top: 40px; }
 
 .spacecenter {
@@ -996,6 +999,38 @@ input[type="range"]:focus::-ms-fill-upper {
   border-radius: 10px;
   -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.7); }
+
+.blockInteraction {
+  width: 1340px;
+  height: 850px;
+  padding: 40px 40px 40px 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.7); }
+  .blockInteraction .note {
+    margin: 0 0 30px 0;
+    font-family: fr-bold;
+    color: white;
+    font-size: 25px;
+    text-align: center;
+    text-shadow: 4px 4px #ff1f50; }
+
+.blockInteraction--active {
+  overflow: hidden; }
 
 .pic {
   width: 40%; }
