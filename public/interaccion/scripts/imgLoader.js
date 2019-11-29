@@ -12,6 +12,7 @@ class ImgLoader {
       jugar: this.app.loadImage("/interaccion/data/botones/jugar.png"),
       jugarHover: this.app.loadImage("/interaccion/data/botones/jugar_hover.png"),
       instrucciones: this.app.loadImage("/interaccion/data/botones/instrucciones.png"),
+      instruccionesHover: this.app.loadImage("/interaccion/data/botones/instrucciones_hover.png"),
     
     };
 
